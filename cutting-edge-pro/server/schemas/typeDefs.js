@@ -28,6 +28,7 @@ type Product{
     description: String
     image: String
     quantity: Int
+    size: String
     price: Float
     category: Category
 }
