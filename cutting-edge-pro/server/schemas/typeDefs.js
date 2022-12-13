@@ -9,6 +9,14 @@ type User {
     orders: [Order]
 }
 
+type Admin {
+    _id: _id
+    username: String
+    email: String
+    password: String
+    users: [User]
+}
+
 type Query {
     me: User
     users: [User]
