@@ -1,3 +1,4 @@
+// import schema snd mongoose
 const { Schema, model } = require("mongoose");
 
 
@@ -24,7 +25,11 @@ const productSchema = new Schema (
         category: {
             type: Schema.Types.ObjectId,
             ref: 'Category'
+        },
+        price: {
+            type: Number
         }
+
         
 
     }
