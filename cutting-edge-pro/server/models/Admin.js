@@ -1,11 +1,17 @@
 // username, email, password , users [User.schema]
-
+// import mongoose 
 const mongoose = require('mongoose');
 
+// import schema from mongoose
 const { Schema } = mongoose;
+
+// import bcrypt for password hashing 
 const bcrypt = require('bcrypt');
+
+// import User model and assign it to array so the admin can populate all user accounts
 const User = require('./User');
 
+// start new admin schema model
 const adminSchema = new Schema({
     username: {
         type: String,
@@ -36,6 +42,8 @@ adminSchema.methods.isCorrectPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
 };
 
+// assign schema to a mongoose model
 const Admin = mongoose.model('Admin', adminSchema);
 
+// export model
 module.exports = Admin;
