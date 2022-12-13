@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from 'axios';
+// import {Image} from 'cloudinary-react';
 
 import './App.css';
 
@@ -15,6 +16,8 @@ const uploadImage = () => {
     Axios.post('https://api.cloudinary.com/v1_1/dt1ejaaxy/image/upload', formData)
     .then((response) => {
       console.log(response);
+      let imageLink = response.data.url;
+      console.log(imageLink);
     });
   };
 
@@ -30,6 +33,7 @@ return (
       }}
         />
         <button onClick={uploadImage}>Upload Image</button>
+        {/* <Image style={{width: 200}} cloudName="dt1ejaaxy" publicId={imageLink} /> */}
     </div>
     
     </header>
