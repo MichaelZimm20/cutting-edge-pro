@@ -17,6 +17,36 @@ type Admin {
     users: [User]
 }
 
+type Category{
+    _id: ID
+    name: String
+}
+
+type Prodcut{
+    _id: ID
+    name: String
+    description: String
+    image: String
+    quantity: Int
+    price: Float
+    category: Category
+}
+
+type Order{
+    _id: ID
+    purchaseDate: String
+    products: [Product]
+}
+
+type Checkout {
+    session: ID
+}
+
+type Auth{
+    token: ID
+    user: User
+}
+
 type Query {
     me: User
     users: [User]
