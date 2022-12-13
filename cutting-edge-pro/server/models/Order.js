@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema({
     purchaseDate: {
-        type: Date;
+        type: Date,
         default: Date.now
     },
     products:[
