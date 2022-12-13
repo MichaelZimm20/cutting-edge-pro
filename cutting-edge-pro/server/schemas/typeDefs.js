@@ -22,7 +22,7 @@ type Category{
     name: String
 }
 
-type Prodcut{
+type Product{
     _id: ID
     name: String
     description: String
