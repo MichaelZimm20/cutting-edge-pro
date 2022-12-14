@@ -37,6 +37,8 @@ return (
       }}
         />
         <button onClick={uploadImage}>Upload Image</button>
+    </div>
+    <div>
         <Image style={{width: 200}} cloudName="dt1ejaaxy" publicId={imageLink} />
     </div>
     
