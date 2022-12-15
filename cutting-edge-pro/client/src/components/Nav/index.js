@@ -7,7 +7,7 @@ function Nav() {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-            // Update styling, make decision on Previous order page
+            // TODO: Update styling, make decision on Previous order page
           <ul className="flex-row">
             <li className="mx-1">
               <Link to="/orderHistory">
