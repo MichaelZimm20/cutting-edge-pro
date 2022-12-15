@@ -14,6 +14,7 @@ import { setContext } from '@apollo/client/link/context';
 import Navigation from './components/Nav';
 import Home from './pages/Home';
 import Signup from './pages/SignupPage';
+import Login from './pages/Login';
 import { StoreProvider } from './utils/GlobalState';
 
 
@@ -57,6 +58,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const [modalShow, setModalShow] = useState(false);
 
   return (
     <ApolloProvider client={client}>
@@ -73,6 +75,13 @@ const client = new ApolloClient({
               <Route
               path="/signuppage"
               element = {<Signup />}
+              />
+              <Route 
+              path="/login"
+              element = {<Login show={modalShow}
+              onHide={() => setModalShow(false)}
+              onClick={() => setModalShow(true)} />}
+              
               />
             {/* <div className="App">
               <header className="App-header">

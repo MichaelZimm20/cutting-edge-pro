@@ -11,7 +11,7 @@ function Navigation() {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-            // TODO: Update styling, make decision on Previous order page
+            // TODO: Update styling to match non-logged in nav bar, make decision on Previous order page
           <ul className="flex-row">
             <li className="mx-1">
               <Link to="/orderHistory">
