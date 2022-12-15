@@ -58,7 +58,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const [modalShow, setModalShow] = useState(false);
 
   return (
     <ApolloProvider client={client}>
@@ -77,11 +76,8 @@ const [modalShow, setModalShow] = useState(false);
               element = {<Signup />}
               />
               <Route 
-              path="/login"
-              element = {<Login show={modalShow}
-              onHide={() => setModalShow(false)}
-              onClick={() => setModalShow(true)} />}
-              
+              exact path="/login"
+              element = {<Login />}
               />
             {/* <div className="App">
               <header className="App-header">

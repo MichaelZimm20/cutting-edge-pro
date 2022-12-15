@@ -7,9 +7,11 @@ import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth'; 
 import { ADD_USER } from '../../utils/mutations';
 
+
 // bootstrap & react-bootstrap
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Form } from 'react-bootstrap';
 
 
 function Signup(props) {
@@ -49,62 +51,51 @@ function Signup(props) {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              Signup
+              Member Signup
             </Modal.Title>
-            <div className='justify-content-between'>
-                <Link to="/login">← Go to Login</Link>
-            </div>
+           
           </Modal.Header>
           <Modal.Body>
-            <h4>Signup Below</h4>
-                <form onSubmit={handleFormSubmit}>
-                    <div className="flex-row space-between my-2">
-                    <label htmlFor="firstName">First Name:</label>
-                    <input
-                        placeholder="First"
-                        name="firstName"
-                        type="firstName"
-                        id="firstName"
-                        onChange={handleChange}
-                    />
-                    </div>
-                    <div className="flex-row space-between my-2">
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input
-                        placeholder="Last"
-                        name="lastName"
-                        type="lastName"
-                        id="lastName"
-                        onChange={handleChange}
-                    />
-                    </div>
-                    <div className="flex-row space-between my-2">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        placeholder="youremail@test.com"
-                        name="email"
-                        type="email"
-                        id="email"
-                        onChange={handleChange}
-                    />
-                    </div>
-                    <div className="flex-row space-between my-2">
-                    <label htmlFor="pwd">Password:</label>
-                    <input
-                        placeholder="******"
-                        name="password"
-                        type="password"
-                        id="pwd"
-                        onChange={handleChange}
-                    />
-                    </div>
+                <Form onSubmit={handleFormSubmit}>
+                    <Form.Group className="flex-row space-between my-2">
+                        <Form.Label htmlFor="Username" className='font-weight-bold'>Username:</Form.Label>
+                        <Form.Control
+                            placeholder="Username"
+                            name="username"
+                            type="username"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="flex-row space-between my-2">
+                        <Form.Label htmlFor="email">Email:</Form.Label>
+                        <Form.Control
+                            placeholder="youremail@test.com"
+                            name="email"
+                            type="email"
+                            id="email"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="flex-row space-between my-2">
+                        <Form.Label htmlFor="pwd"><span className='font-weight-bold'>Password:</span></Form.Label>
+                        <Form.Control
+                            placeholder="******"
+                            name="password"
+                            type="password"
+                            id="pwd"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
                     <div className="flex-row flex-end">
-                    <button type="submit">Submit</button>
+                    <Button className='w-100 my-3 mx-auto d-flex justify-content-center bg-warning border-dark border-0 fs-5' type="submit">Submit</Button>
                     </div>
-                </form>
+                </Form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
+          <Modal.Footer className='d-flex justify-content-between'>
+            <div className='justify-content-between'>
+                    <Link to="/login" style={{textDecoration: 'none'}}>Already a member? Log in</Link>
+            </div>
+            <Link to='/'><Button onClick={props.onHide}>Close</Button></Link>
           </Modal.Footer>
         </Modal>
       );

@@ -50,14 +50,14 @@ function AdminSignup(props) {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              Signup
+              Admin
             </Modal.Title>
             <div className='justify-content-between'>
                 <Link to="/login">← Go to Login</Link>
             </div>
           </Modal.Header>
           <Modal.Body>
-            <h4>Signup Below</h4>
+            <h4>Signup</h4>
                 <form onSubmit={handleFormSubmit}>
                     <div className="flex-row space-between my-2">
                     <label htmlFor="firstName">First Name:</label>

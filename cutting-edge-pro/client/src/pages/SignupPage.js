@@ -5,27 +5,24 @@ import Signup from "../components/Signup/Signup";
 import AdminSignup from "../components/Signup/adminSignUp";
 
 function SignupPage() {
-    const [modalShow, setModalShow] = useState(false);
+    const [modalShow, setModalShow] = useState(true);
 
     return (
         <>
-            <Button variant='primary' onClick={() => setModalShow(true)}>
-                User SignUp
-            </Button>
-
+            
             <Signup
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
 
-            <Button variant='primary' onClick={() => setModalShow(true)}>
+            {/* <Button variant='primary' onClick={() => setModalShow(true)}>
                Admin SignUp
             </Button>
 
-            <Signup
+            <AdminSignup
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-            />
+            /> */}
         </>
     );
 };
