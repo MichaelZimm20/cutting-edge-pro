@@ -1,8 +1,7 @@
 // imports 
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button'
 import Signup from "../components/Signup/Signup";
-import AdminSignup from "../components/Signup/adminSignUp";
+// import AdminSignup from "../components/Signup/adminSignUp";
 
 function SignupPage() {
     const [modalShow, setModalShow] = useState(true);
