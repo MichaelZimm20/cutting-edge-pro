@@ -13,6 +13,7 @@ import { setContext } from '@apollo/client/link/context';
 // import './App.css';
 import Navigation from './components/Nav';
 import Home from './pages/Home';
+import Upload from "./pages/Upload";
 import Signup from './pages/SignupPage';
 import Login from './pages/Login';
 import { StoreProvider } from './utils/GlobalState';
@@ -78,6 +79,10 @@ const client = new ApolloClient({
               <Route 
               exact path="/login"
               element = {<Login />}
+              />
+              <Route 
+              exact path="/upload"
+              element = {<Upload />}
               />
             {/* <div className="App">
               <header className="App-header">
