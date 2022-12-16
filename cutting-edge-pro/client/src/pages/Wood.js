@@ -3,7 +3,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Card, Button, Container, Row, Col, } from 'react-bootstrap';
 import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
@@ -11,6 +11,27 @@ import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
 
 function Wood() {
+
+  // Image array attempt
+  // const [images, setImages] = useState([]);
+
+  // useEffect(()=>{
+  //   // Get a list of all the files in the directory
+  //   // const imageFiles = require.context('../assets/images/wood', false, /\.png|jpe?g|svg)$/);
+  //   const imageFiles = require.context('../assets/images/wood/small', false, /\.png|jpe?g|svg$/);
+  //   console.log(imageFiles);
+  //   // Map the image file names to an array of objects containing the file name and path
+  //   const images = imageFiles.keys().map(imageFile => {
+  //     return {
+  //       name: imageFile.replace('./', ''),
+  //       path: imageFiles(imageFile)
+  //     }
+  //   });
+  //   setImages(images);
+  
+  // },[]);
+
+
   return (
     <div className='d-flex  mt-3'>
     <Container>
@@ -25,7 +46,7 @@ function Wood() {
             <img className="d-block w-100" src={woodEngraving}alt='wood' />           
             </Carousel.Item>
             <Carousel.Item>
-            <img className="d-block w-100" src={metalEngraving} alt='wood'/>           
+            <img className="d-block w-100" src={metalEngraving} alt='wood'/>         
             </Carousel.Item>
             </Carousel>
             <Card.Body>
