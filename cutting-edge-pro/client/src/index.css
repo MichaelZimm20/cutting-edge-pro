@@ -1,3 +1,18 @@
+:root {
+  --slate-gray: #628395;
+  --middle-gray: #96897B;
+  --earth-yellow: #DBAD6A;
+  --camel: #CF995F;
+  --straw: #D0CE7C;
+  
+  --linear: linear-gradient(to right, #07548c, rgba(68, 0, 88, 0.705));
+  --linear-grad: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  --light-warning: #f0ad4e;
+  --border-radius: .3rem;
+  --btn-shadow: rgba(218, 122, 247, 0.856);
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +25,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.bg-color {
+  background-color: var(--middle-gray)
 }
