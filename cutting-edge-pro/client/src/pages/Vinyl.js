@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
-import { Card, Button, Container, Row, Col, Image } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col,} from 'react-bootstrap';
 import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
@@ -17,13 +17,13 @@ function Vinyl() {
           <Card style={{ width: '18rem' }}>
             <Carousel>
               <Carousel.Item>
-            <img className="d-block w-100" src={lumber} />           
+            <img className="d-block w-100" src={lumber} alt='vinyl'/>           
             </Carousel.Item>
             <Carousel.Item>
-            <img className="d-block w-100" src={woodEngraving} />           
+            <img className="d-block w-100" src={woodEngraving} alt='vinyl'/>           
             </Carousel.Item>
             <Carousel.Item>
-            <img className="d-block w-100" src={metalEngraving} />           
+            <img className="d-block w-100" src={metalEngraving}alt='vinyl' />           
             </Carousel.Item>
             </Carousel>
             <Card.Body>
@@ -39,7 +39,17 @@ function Vinyl() {
         </Col>
         <Col>
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="product-image-2.jpg" />
+          <Carousel>
+              <Carousel.Item>
+            <img className="d-block w-100" src={lumber} alt='vinyl'/>           
+            </Carousel.Item>
+            <Carousel.Item>
+            <img className="d-block w-100" src={woodEngraving} alt='vinyl'/>           
+            </Carousel.Item>
+            <Carousel.Item>
+            <img className="d-block w-100" src={metalEngraving} alt='vinyl'/>           
+            </Carousel.Item>
+            </Carousel>
             <Card.Body>
               <Card.Title>Medium</Card.Title>
               <Card.Text>
@@ -53,7 +63,17 @@ function Vinyl() {
         </Col>
         <Col>
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="product-image-3.jpg" />
+          <Carousel>
+              <Carousel.Item>
+            <img className="d-block w-100" src={lumber} alt='vinyl'/>           
+            </Carousel.Item>
+            <Carousel.Item>
+            <img className="d-block w-100" src={woodEngraving} alt='vinyl'/>           
+            </Carousel.Item>
+            <Carousel.Item>
+            <img className="d-block w-100" src={metalEngraving} alt='vinyl'/>           
+            </Carousel.Item>
+            </Carousel>
             <Card.Body>
               <Card.Title>Large</Card.Title>
               <Card.Text>
