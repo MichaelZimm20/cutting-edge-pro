@@ -11,11 +11,15 @@ import {
 import { setContext } from '@apollo/client/link/context';
 //develop test
 // import './App.css';
+
 import Navigation from './components/Nav';
 import Home from './pages/Home';
 import Signup from './pages/SignupPage';
 import Login from './pages/Login';
 import { StoreProvider } from './utils/GlobalState';
+import Wood from './pages/Wood';
+import Metal from './pages/Metal';
+import Vinyl from './pages/Vinyl';
 
 
 const httpLink = createHttpLink({
@@ -79,6 +83,18 @@ const client = new ApolloClient({
               exact path="/login"
               element = {<Login />}
               />
+              <Route 
+              exact path="/wood"
+              element = {<Wood />}
+              />
+              <Route 
+              exact path="/metal"
+              element = {<Metal />}
+              />
+              <Route 
+              exact path="/vinyl"
+              element = {<Vinyl />}
+              />
             {/* <div className="App">
               <header className="App-header">
                 <div>
@@ -98,7 +114,7 @@ const client = new ApolloClient({
             </Routes>
           </StoreProvider>
         </div>
-
+       
       </Router>
     </ApolloProvider>
   );

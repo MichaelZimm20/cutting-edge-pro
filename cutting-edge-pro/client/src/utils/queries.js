@@ -33,8 +33,11 @@ export const QUERY_ALL_PRODUCTS = gql`
 
 
 export const QUERY_USER = gql`
+query user($username: String!)
     {
-        user {
+        user(username: $username) {
+            _id
+            email
             username
             orders{
                 _id
