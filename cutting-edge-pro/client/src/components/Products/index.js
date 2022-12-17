@@ -12,7 +12,7 @@ const products = [
       _id: 1,
       name: sizeName[0],
       price: 29.99,
-      quantity: 45
+      // quantity: 45
     },
     {
       _id: 2,

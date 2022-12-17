@@ -17,7 +17,7 @@
 //         <div className="bg-color">
 
 //             <div className="my-5 vh-100">
-                
+
 //                 <CardGroup className="my-auto mx-auto">
 //                 {/* <div className="col-md-6 d-flex h-50 justify-content-start "> */}
 //                     <Card>
@@ -34,7 +34,7 @@
 //                         </Card.Footer>
 //                     </Card>
 //                 {/* </div> */}
-                    
+
 //                     {/* <div className="col-md-6 d-flex h-50 justify-content-end"> */}
 //                         <Card>
 //                             <Card.Img variant="top" src={metalEngraving} />
@@ -50,7 +50,7 @@
 //                             </Card.Footer>
 //                         </Card>
 //                     {/* </div> */}
-                    
+
 //                     <Card>
 //                         <Card.Img variant="top" src="holder.js/100px160" />
 //                         <Card.Body>
@@ -78,10 +78,9 @@
 
 import React from "react";
 import Cart from "../components/Cart";
-import Card from 'react-bootstrap/Card';
+import { Card, Button, Container, Row, Col, } from 'react-bootstrap';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { Link } from "react-router-dom";
-import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import '../index.css'
@@ -92,16 +91,15 @@ import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
 const Home = () => {
     return (
-        <div className="bg-color">
-            <div className="my-5 vh-100">
-                <CardGroup className="my-auto mx-auto">
-                    <Card className="text-center">
-                        <Card.Img variant="top" src={woodEngraving} />
+        <div className="bg-color d-flex mt-3">
+            <div className="my-5 mx-5 vh-100" >
+                <CardGroup className=" my-3 mx-3">
+                    <Card className=" text-center my-3 mx-3">
+                        <Card.Img variant="top" src={woodEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         <Card.Body>
                             <Card.Title>Wood Art</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.
+                                Click here to browse our wood art products!
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -110,13 +108,12 @@ const Home = () => {
                             </Link>
                         </Card.Footer>
                     </Card>
-                    <Card className="text-center">
-                        <Card.Img variant="top" src={metalEngraving} />
+                    <Card className="text-center my-3 mx-3">
+                        <Card.Img variant="top" src={metalEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         <Card.Body>
                             <Card.Title>Metal Art</Card.Title>
                             <Card.Text>
-                                This card has supporting text below as a natural lead-in to
-                                additional content.{' '}
+                                Click here to browse our metal art products!
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -125,14 +122,12 @@ const Home = () => {
                             </Link>
                         </Card.Footer>
                     </Card>
-                    <Card className="text-center">
-                        <Card.Img variant="top" src={lumber} />
+                    <Card className="text-center my-3 mx-3">
+                        <Card.Img variant="top" src={lumber} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         <Card.Body>
                             <Card.Title>Acrylic Art</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content. This card has even longer content than the
-                                first to show that equal height action.
+                                Click here to browse our acrylic art products!
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -142,7 +137,22 @@ const Home = () => {
                         </Card.Footer>
                     </Card>
                 </CardGroup>
+                <Row className='justify-content-center mt-4'>
+                    <Col xs={6}>
+                        <Card style={{ width: '100%' }}>
+                            <Card.Img variant="top" />
+                            <Card.Body>
+                                <Card.Title>About Us</Card.Title>
+                                <Card.Text>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
                 <Cart />
+
             </div>
-        </div>)}
-        export default Home;
+        </div>)
+}
+export default Home;
