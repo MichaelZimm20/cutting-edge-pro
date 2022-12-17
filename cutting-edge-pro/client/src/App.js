@@ -37,6 +37,11 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
 //   const [imageSelected, setImageSelected] = useState('');
 //   // Declare a state variable to store the image link
@@ -58,10 +63,7 @@ function App() {
 //   });
 // };
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+
 
 
   return (
