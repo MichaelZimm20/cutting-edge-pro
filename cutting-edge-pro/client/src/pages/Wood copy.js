@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
-import { Card, Button, Container, Row, Col, Image } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col} from 'react-bootstrap';
 import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
@@ -20,50 +20,50 @@ import products from '../components/Products';
 
 function Wood() {
 
-console.log(products);
-console.log(products)
+// console.log(products);
+// console.log(products)
 
 
-const smallProduct = products.find(product => product.name.name === 'Small');
-console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
-console.log(smallProduct.name)
-console.log(smallProduct.price)
-console.log(smallProduct.quantity)
+// const smallProduct = products.find(product => product.name.name === 'Small');
+// console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
+// console.log(smallProduct.name)
+// console.log(smallProduct.price)
+// console.log(smallProduct.quantity)
 
-const mediumProduct = products.find(product => product.name.name === 'Medium');
-console.log(mediumProduct); // {name: {name: 'Medium'}, price: 59.99, quantity: 20}
-console.log(mediumProduct.name)
-console.log(mediumProduct.price)
-console.log(mediumProduct.quantity)
+// const mediumProduct = products.find(product => product.name.name === 'Medium');
+// console.log(mediumProduct); // {name: {name: 'Medium'}, price: 59.99, quantity: 20}
+// console.log(mediumProduct.name)
+// console.log(mediumProduct.price)
+// console.log(mediumProduct.quantity)
 
-  // const [state, dispatch] = useStoreContext();
-  // const { cart } = state;
+  const [state, dispatch] = useStoreContext();
+  const { cart } = state;
 
-  // const addToCart = () => {
-  //   // find the cart item with the matching id
-  //   const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+  const addToCart = (item) => {
+    // find the cart item with the matching id
+    const itemInCart = cart.find((cartItem) => cartItem._id === item._id);
 
-  //   // if there was a match, call UPDATE with a new purchase quantity
-  //   if (itemInCart) {
-  //     dispatch({
-  //       type: UPDATE_CART_QUANTITY,
-  //       _id: _id,
-  //       purchaseQuantity:  parseInt(itemInCart.purchaseQuantity) + 1
-  //     });
+    // if there was a match, call UPDATE with a new purchase quantity
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: item._id,
+        purchaseQuantity:  parseInt(itemInCart.purchaseQuantity) + 1
+      });
 
-  //     idbPromise('cart', 'put', {
-  //       ...itemInCart,
-  //       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1 
-  //     })
-  //   } else {
-  //     dispatch({
-  //       type: ADD_TO_CART,
-  //       product: { ...item, purchaseQuantity: 1}
-  //     });
+      idbPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1 
+      })
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...item, purchaseQuantity: 1}
+      });
 
-  //     idbPromise('cart', 'put', { ...item, purchaseQuantity: 1});
-  // }
-  // };
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1});
+  }
+  };
 
 
   // const {
@@ -97,7 +97,7 @@ console.log(mediumProduct.quantity)
               </Card.Text>
               <Card.Text>Price: ${smallProduct.price}</Card.Text>
               <Card.Text>{smallProduct.quantity} {pluralize("item", products.quantity)} in stock</Card.Text>
-              {/* <Button variant="primary" onClick={addToCart}>Add to Cart</Button> */}
+              console.log('button clicked', <Button variant="primary" onClick={() => addToCart(item)}>Add to Cart</Button>)
             </Card.Body>
           </Card>
         </Col>
@@ -148,7 +148,7 @@ console.log(mediumProduct.quantity)
         </Col>
         </Row>
         </Container>
-        <Cart/>
+        <Cart addToCart={addToCart}/>
         </div>
         )}
 
