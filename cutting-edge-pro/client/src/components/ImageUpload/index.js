@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
 const navigateStripe = () => {
   // 👇️ navigate to google for testing
-  navigate('login');
+  navigate('/');
 };
 
 return (

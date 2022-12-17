@@ -98,6 +98,10 @@ function App() {
               exact path="/vinyl"
               element = {<Vinyl />}
               />
+              <Route 
+              exact path="/Upload"
+              element = {<Upload />}
+              />
             {/* <div className="App">
               <header className="App-header">
                 <div>
