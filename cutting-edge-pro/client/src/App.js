@@ -20,7 +20,7 @@ import Login from './pages/Login';
 import { StoreProvider } from './utils/GlobalState';
 import Wood from './pages/Wood';
 import Metal from './pages/Metal';
-import Vinyl from './pages/Vinyl';
+import Acrylic from './pages/Acrylic';
 import Footer from './components/Footer'
 
 
@@ -71,7 +71,7 @@ function App() {
             <Navigation />
             <Routes>
               <Route
-                path="/"
+                path="/home"
                 element={<Home />}
 
               />
@@ -92,8 +92,8 @@ function App() {
               element = {<Metal />}
               />
               <Route 
-              exact path="/vinyl"
-              element = {<Vinyl />}
+              exact path="/Acrylic"
+              element = {<Acrylic />}
               />
               <Route 
               exact path="/Upload"
