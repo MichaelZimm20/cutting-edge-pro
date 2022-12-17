@@ -1,14 +1,11 @@
 import React from 'react';
-
+import products from '../Products';
 const CartItem = ({ item }) => {
+
+  
   return (
     <div className="flex-row">
-      <div>
-        <img
-          src={`/images/${item.image}`}
-          alt=""
-        />
-      </div>
+      
       <div>
         <div>{item.name}, ${item.price}</div>
         <div>
