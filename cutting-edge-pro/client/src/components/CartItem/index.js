@@ -2,6 +2,7 @@ import React from 'react';
 import products from '../Products';
 const CartItem = ({ item }) => {
 
+  
   return (
     <div className="flex-row">
       

@@ -14,6 +14,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Navigation from './components/Nav';
 import Home from './pages/Home';
+import Upload from "./pages/Upload";
 import Signup from './pages/SignupPage';
 import Login from './pages/Login';
 import { StoreProvider } from './utils/GlobalState';
@@ -96,6 +97,10 @@ function App() {
               <Route 
               exact path="/vinyl"
               element = {<Vinyl />}
+              />
+              <Route 
+              exact path="/Upload"
+              element = {<Upload />}
               />
             {/* <div className="App">
               <header className="App-header">

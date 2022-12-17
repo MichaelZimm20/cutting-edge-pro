@@ -21,7 +21,6 @@ function Navigation() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link href="/cart">Cart</Nav.Link>
-                  <Nav.Link href="/Upload">Image Upload</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
                     <NavDropdown.Item href="/metal">
@@ -50,7 +49,6 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link href="/Upload">Image Upload</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
               <NavDropdown.Item href="/metal">
