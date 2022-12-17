@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Saw from '../../assets/images/circular_saw_blade.png'
+import '../../App.css'
 
 function Navigation() {
 
@@ -30,7 +32,7 @@ function Navigation() {
         return (
           <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">Cutting Edge <img src={Saw} style={{ width: '35px', height: '35px'}} className='App-logo' alt='saw app logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -38,14 +40,14 @@ function Navigation() {
             <Nav.Link href="/signuppage">Signup</Nav.Link>
             <Nav.Link href="/Upload">Image Upload</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
+              <NavDropdown.Item href="/metal">
+                Metal
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/vinyl">Vinyl</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="/games">
+              Games
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

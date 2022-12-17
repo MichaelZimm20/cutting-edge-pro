@@ -10,7 +10,8 @@ import '../index.css'
 
 //import images 
 import lumber from '../assets/images/Lumber-cut.jpg'
-
+import woodEngraving from '../assets/images/engraved-wood.jpg'
+import metalEngraving from '../assets/images/metal-sign.jpg'
 const Home = () => {
     return (
         <div className="bg-color">
@@ -20,7 +21,7 @@ const Home = () => {
                 <CardGroup className="my-auto mx-auto">
                 {/* <div className="col-md-6 d-flex h-50 justify-content-start "> */}
                     <Card>
-                        <Card.Img variant="top" src={lumber} />
+                        <Card.Img variant="top" src={woodEngraving} />
                         <Card.Body>
                             <Card.Title>Wood Art</Card.Title>
                             <Card.Text>
@@ -29,23 +30,23 @@ const Home = () => {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Link><Button className="text-light w-100">Shop Wood</Button></Link>
+                            <Link to='/wood'><Button className="text-light w-100">Shop Wood</Button></Link>
                         </Card.Footer>
                     </Card>
                 {/* </div> */}
                     
                     {/* <div className="col-md-6 d-flex h-50 justify-content-end"> */}
                         <Card>
-                            <Card.Img variant="top" src={lumber} />
+                            <Card.Img variant="top" src={metalEngraving} />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                                <Card.Title>Metal Art</Card.Title>
                                 <Card.Text>
                                     This card has supporting text below as a natural lead-in to
                                     additional content.{' '}
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <small className="text-muted">Last updated 3 mins ago</small>
+                                <Link to='/metal'><Button className="text-light w-100">Shop Metal</Button></Link>
                             </Card.Footer>
                         </Card>
                     {/* </div> */}
@@ -53,7 +54,7 @@ const Home = () => {
                     <Card>
                         <Card.Img variant="top" src="holder.js/100px160" />
                         <Card.Body>
-                            <Card.Title>Card title</Card.Title>
+                            <Card.Title>Vinyl Art</Card.Title>
                             <Card.Text>
                                 This is a wider card with supporting text below as a natural lead-in
                                 to additional content. This card has even longer content than the
@@ -61,7 +62,7 @@ const Home = () => {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
+                        <Link to='/vinyl'><Button className="text-light w-100">Shop Vinyl</Button></Link>
                         </Card.Footer>
                     </Card>
                 </CardGroup>
