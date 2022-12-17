@@ -13,23 +13,35 @@ function Navigation() {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-            // TODO: Update styling to match non-logged in nav bar, make decision on Previous order page
-          <ul className="flex-row">
-            <li className="mx-1">
-              <Link to="/orderHistory">
-                Order History
-              </Link>
-            </li>
-            <li className="mx-1">
-              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-              <a href="/" onClick={() => Auth.logout()}>
-                Logout
-              </a>
-            </li>
-          </ul>
+          // Logged in Nav bar
+            <Navbar bg="light" expand="lg">
+            <Container>
+              <Navbar.Brand href="/">Cutting Edge <img src={Saw} style={{ width: '35px', height: '35px'}} className='App-logo' alt='saw app logo'/></Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                  <Nav.Link href="/cart">Cart</Nav.Link>
+                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
+                    <NavDropdown.Item href="/metal">
+                      Metal
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/vinyl">Vinyl</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="/games">
+                    Games
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link href="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+
         );
       } else {
         return (
+          // Nav bar for new users/ users who are not logged in
           <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/home">Cutting Edge <img src={Saw} style={{ width: '35px', height: '35px'}} className='App-logo' alt='saw app logo'/></Navbar.Brand>
@@ -37,8 +49,6 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link href="/signuppage">Signup</Nav.Link>
-            <Nav.Link href="/Upload">Image Upload</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
               <NavDropdown.Item href="/metal">
@@ -50,6 +60,8 @@ function Navigation() {
               Games
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/signuppage">Signup</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

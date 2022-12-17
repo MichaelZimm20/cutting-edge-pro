@@ -12,16 +12,17 @@ import { setContext } from "@apollo/client/link/context";
 //develop test
 // import './App.css';
 
-import Navigation from "./components/Nav";
-import Home from "./pages/Home";
-import Signup from "./pages/SignupPage";
-import Login from "./pages/Login";
-import { StoreProvider } from "./utils/GlobalState";
-import Wood from "./pages/Wood";
-import Metal from "./pages/Metal";
-import Acrylic from "./pages/Acrylic";
-import Footer from "./components/Footer";
-import LandingPage from "./components/LandingPage";
+import Navigation from './components/Nav';
+import Home from './pages/Home';
+import Upload from "./pages/Upload";
+import Signup from './pages/SignupPage';
+import Login from './pages/Login';
+import { StoreProvider } from './utils/GlobalState';
+import Wood from './pages/Wood';
+import Metal from './pages/Metal';
+import Vinyl from './pages/Vinyl';
+import Footer from './components/Footer'
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -69,14 +70,36 @@ function App() {
           <StoreProvider>
             <Navigation />
             <Routes>
-              <Route exact path="/" element={<LandingPage />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/signuppage" element={<Signup />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/wood" element={<Wood />} />
-              <Route exact path="/metal" element={<Metal />} />
-              <Route exact path="/Acrylic" element={<Acrylic />} />
-              {/* <div className="App">
+              <Route
+                path="/"
+                element={<Home />}
+
+              />
+              <Route
+              path="/signuppage"
+              element = {<Signup />}
+              />
+              <Route 
+              exact path="/login"
+              element = {<Login />}
+              />
+              <Route 
+              exact path="/wood"
+              element = {<Wood />}
+              />
+              <Route 
+              exact path="/metal"
+              element = {<Metal />}
+              />
+              <Route 
+              exact path="/vinyl"
+              element = {<Vinyl />}
+              />
+              <Route 
+              exact path="/Upload"
+              element = {<Upload />}
+              />
+            {/* <div className="App">
               <header className="App-header">
                 <div>
                   <input type='file'
