@@ -99,11 +99,12 @@ function Wood(item) {
 
 
   return (
-    <div className='d-flex  mt-3'>
-    <Container>
+    <div className='bg-color  d-flex  mt-3 mb-3'>
+    <Container className="mt-3" style={{ width: '100%', height: '100%'}} fluid>
       <Row>
         <Col>
-          <Card style={{ width: '18rem' }}>
+        
+          <Card style={{ width: '100%', height: '100%'}}>
             <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={small1} alt='wood'/>           
@@ -121,7 +122,7 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: ${smallProduct.price}</Card.Text>
-              <Card.Text>{smallProduct.quantity} {pluralize("item", products.quantity)} in stock</Card.Text>
+              <Card.Text>{smallProduct.quantity}  Size: Small</Card.Text>
              
               <Button variant="primary"  
               key={item._id}
@@ -131,7 +132,7 @@ function Wood(item) {
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: '18rem' }}>
+          <Card style={{ width: '100%', height: '100%'}}>
           <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={medium1} alt='wood'/>           
@@ -156,7 +157,7 @@ function Wood(item) {
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: '18rem' }}>
+          <Card style={{ width: '100%', height: '100%'}}>
           <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={large1} alt='wood'/>           
@@ -182,9 +183,9 @@ function Wood(item) {
         </Col>
         
         </Row>
-        <Row className='justify-content-center mt-4'>
+        <Row className='justify-content-center mt-3 mb-3'>
         <Col xs={6}>
-          <Card  style={{ width: '100%' }}>
+          <Card  style={{ width: '100%', height: '100%'}}>
             <Card.Img variant="top" src={large3} />
             <Card.Body>
               <Card.Title>Custom</Card.Title>

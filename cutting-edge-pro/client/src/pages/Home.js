@@ -92,8 +92,9 @@ import metalEngraving from '../assets/images/metal-sign.jpg'
 const Home = () => {
     return (
         <div className="bg-color d-flex mt-3">
-            <div className="my-5 mx-5 vh-100" >
-                <CardGroup className=" my-3 mx-3">
+            <div className="my-5 mx-5 " >
+                <Container fluid >
+                <CardGroup className="mx-3">
                     <Card className=" text-center my-3 mx-3">
                         <Card.Img variant="top" src={woodEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         <Card.Body>
@@ -144,13 +145,20 @@ const Home = () => {
                             <Card.Body>
                                 <Card.Title>About Us</Card.Title>
                                 <Card.Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Our company specializes in using laser cutting technology to transform images into stunning pieces of art. Our team of talented artists and technicians use state-of-the-art laser cutters to carefully craft each piece, ensuring precise cuts and intricate details.
+                                <br />
+                                <br />
+                                    Whether it's a simple design or a complex, multi-layered creation, we have the skills and expertise to bring your vision to life. Our laser cutters allow us to work with a wide range of materials, including wood, metal, and acrylic, giving you endless possibilities for your custom art piece.
+                                    <br />
+                                    <br />
+                                    At our company, we take pride in our commitment to excellence and customer satisfaction. From start to finish, we work closely with our clients to ensure that their vision becomes a reality. If you're looking for a unique and eye-catching piece of art, look no further than our laser cutting services.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
                 <Cart />
+                </Container>
 
             </div>
         </div>)

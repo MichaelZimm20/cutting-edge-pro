@@ -49,7 +49,7 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/cart">Cart</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Material Options" id="basic-nav-dropdown">
               <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
               <NavDropdown.Item href="/metal">
                 Metal
