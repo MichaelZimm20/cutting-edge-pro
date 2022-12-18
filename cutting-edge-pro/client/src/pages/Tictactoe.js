@@ -3,7 +3,7 @@ import TicTacToe from "../components/TicTacToe/";
 
 function Tictactoe() {
   return (
-    <div>
+    <div className="game">
       <TicTacToe />
     </div>
   );

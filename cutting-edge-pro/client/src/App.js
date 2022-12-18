@@ -98,11 +98,11 @@ function App() {
               element = {<Acrylic />}
               />
               <Route 
-              exact path="/Games"
+              exact path="/games"
               element = {<Games />}
               />
               <Route 
-              exact path="/Ticktactoe"
+              exact path="/Tictactoe"
               element = {<Tictactoe />}
               />
               <Route 

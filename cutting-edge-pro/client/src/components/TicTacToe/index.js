@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import './style.css';
 
 const TicTacToe = () => {
@@ -9,18 +9,28 @@ const TicTacToe = () => {
 
     const navigateGames = () => {
         // 👇️ navigate to home for testing
-        navigate('/Games');
+        navigate('/games');
     };
 
     return (
-        <div>
-            <Container>
-            
+      <div>
+        <Container>
+        <div className="board">
+      <Button className="square">X</Button>
+      <Button className="square">O</Button>
+      <Button className="square">X</Button>
+      <Button className="square">O</Button>
+      <Button className="square">X</Button>
+      <Button className="square">O</Button>
+      <Button className="square">X</Button>
+      <Button className="square">O</Button>
+      <Button className="square">X</Button>
+      </div>
             <div>
                 <button onClick={navigateGames}>Back to the games!</button>
             </div>
-            </Container>
-        </div>
+        </Container>
+      </div>
     );
 };
 export default TicTacToe;
