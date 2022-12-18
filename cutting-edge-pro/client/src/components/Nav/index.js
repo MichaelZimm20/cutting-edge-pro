@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
-import { useStoreContext } from "../../utils/GlobalState";
-import { useQuery } from '@apollo/client';
+//imports 
+import React from "react";
 import Auth from "../../utils/auth";
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
-import { idbPromise } from '../../utils/helpers';
 import CategoryMenu from "../CategoryMenu";
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Saw from '../../assets/images/circular_saw_blade.png'
 import '../../App.css'
 
@@ -27,18 +21,7 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/cart">Cart</Nav.Link>
-                <NavDropdown title="Products" id="basic-nav-dropdown">
-
-                  <NavDropdown.Item href="/wood">Wood</NavDropdown.Item>
-                  <NavDropdown.Item href="/metal">
-                    Metal
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/vinyl">Acrylics</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="/games">
-                    Games
-                  </NavDropdown.Item>
-                </NavDropdown>
+                  <CategoryMenu />
                 <Nav.Link href="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -56,7 +39,7 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/cart">Cart</Nav.Link>
-                <CategoryMenu />
+                  <CategoryMenu />
                 <Nav.Link href="/signuppage">Signup</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>

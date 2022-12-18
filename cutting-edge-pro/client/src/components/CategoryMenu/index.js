@@ -10,37 +10,39 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
-  const { categories } = state;
-  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-  const navigate = useNavigate();
+    const [state, dispatch] = useStoreContext();
+    const { categories } = state;
+    const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    //if categoryData exists or has changed from the response of useQuery, then run dispatch()
-    if (categoryData) {
-      // execute our dispatch function with our action object indicating the type of action and the data to set our state for categories to
-      dispatch({
-        type: UPDATE_CATEGORIES,
-        categories: categoryData.categories
-      });
+    useEffect(() => {
+        //if categoryData exists or has changed from the response of useQuery, then run dispatch()
+        if (categoryData) {
+            // execute our dispatch function with our action object indicating the type of action and the data to set our state for categories to
+            dispatch({
+                type: UPDATE_CATEGORIES,
+                categories: categoryData.categories
+            });
 
-      categoryData.categories.forEach(category => {
-        idbPromise('categories', 'put', category);
-      });
-    } else if (!loading) {
-      // since offline, get all of the data from the `products` store
-        idbPromise('categories', 'get').then(categories => {
-          // retrieve data to set global state for offline browsing
-          dispatch({
-            type: UPDATE_CATEGORIES,
-            categories: categories
-          });
-        });
-    }
-  }, [categoryData, loading, dispatch]);
+            categoryData.categories.forEach(category => {
+                idbPromise('categories', 'put', category);
+            });
+        } else if (!loading) {
+            // since offline, get all of the data from the `products` store
+            idbPromise('categories', 'get').then(categories => {
+                // retrieve data to set global state for offline browsing
+                dispatch({
+                    type: UPDATE_CATEGORIES,
+                    categories: categories
+                });
+            });
+        }
+    }, [categoryData, loading, dispatch]);
 
-  const handleClick = linkName => {
-     if (linkName === 'wood') {
+
+    // click handler to help the dropdown navigate onClick to the correct page
+    const handleClick = linkName => {
+        if (linkName === 'wood') {
             navigate('/wood')
         } else if (linkName === 'metal') {
             navigate('/metal')
@@ -49,42 +51,42 @@ function CategoryMenu() {
         } else {
             navigate('/');
         }
-    // dispatch({
-    //   type: UPDATE_CURRENT_CATEGORY,
-    //   currentCategory: id
-    // });
-  };
-  
-  
+        // dispatch({
+        //   type: UPDATE_CURRENT_CATEGORY,
+        //   currentCategory: id
+        // });
+    };
 
- 
 
- 
-  return (
-    <div>
-      
-          <NavDropdown title="Products" id="basic-nav-dropdown">
-             {categories.map((item) => (
-                <Link style={{textDecoration: 'none', color:'#000000'}} 
-                to={`/${item.name.toLowerCase()}`}
-                onClick={() => handleClick(item.name.toLowerCase())}
-                >
-                
-                <NavDropdown.Item key={item._id}>{item.name}
-                    
+
+
+
+    // maps through the category names and turn them into a Dropdown link formatted as a button
+    return (
+        <div>
+
+            <NavDropdown title="Products" id="basic-nav-dropdown">
+                {categories.map((item) => (
+                    <Link style={{ textDecoration: 'none', color: '#000000' }}
+                        to={`/${item.name.toLowerCase()}`}
+                        onClick={() => handleClick(item.name.toLowerCase())}
+                    >
+
+                        <NavDropdown.Item key={item._id}>{item.name}
+
+                        </NavDropdown.Item>
+                    </Link>
+                ))}
+
+
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/games">
+                    Games
                 </NavDropdown.Item>
-                </Link>
-             ))}
-             
-        
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/games">
-                  Games
-              </NavDropdown.Item>
-          </NavDropdown>
+            </NavDropdown>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default CategoryMenu;
