@@ -69,15 +69,15 @@ const handleClick2 = id => {
 
             <NavDropdown title="Products" id="basic-nav-dropdown">
                 {categories.map((item) => (
-                    <Link style={{ textDecoration: 'none', color: '#000000' }}
-                        to={`/${item.name.toLowerCase()}`}
-                        onClick={() => handleClick1(item.name.toLowerCase())}
+                    <NavDropdown.Item style={{ textDecoration: 'none', color: '#000000' }}
+                       
+                        onClick={() => {
+                            handleClick1(item.name.toLowerCase()); 
+                            handleClick2(item._id)}}
+                       key={item._id}
                     >
-
-                        <NavDropdown.Item onClick={() => {handleClick2(item._id)}} key={item._id}>{item.name}
-
-                        </NavDropdown.Item>
-                    </Link>
+                        {item.name}
+                    </NavDropdown.Item>
                 ))}
 
 
@@ -92,3 +92,14 @@ const handleClick2 = id => {
 }
 
 export default CategoryMenu;
+
+
+// <Link style={{ textDecoration: 'none', color: '#000000' }}
+// to={`/${item.name.toLowerCase()}`}
+// onClick={() => handleClick1(item.name.toLowerCase())}
+// >
+
+// <NavDropdown.Item onClick={() => {handleClick2(item._id)}} key={item._id}>{item.name}
+
+// </NavDropdown.Item>
+// </Link>
