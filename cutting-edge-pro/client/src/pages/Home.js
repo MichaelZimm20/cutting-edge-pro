@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import '../index.css'
 
+
 //import images 
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
@@ -15,7 +16,6 @@ import metalEngraving from '../assets/images/metal-sign.jpg'
 const Home = () => {
     return (
         <div className="bg-color">
-
             <div className="my-5 vh-100">
                 
                 <CardGroup className="my-auto mx-auto">

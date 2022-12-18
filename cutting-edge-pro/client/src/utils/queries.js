@@ -8,12 +8,10 @@ export const QUERY_PRODUCTS = gql`
             _id
             name
             description
-            price 
-            quantity
-            image
+            price
             category {
                 _id
-            }
+              }
         }
     }
 `;
@@ -25,20 +23,29 @@ export const QUERY_ALL_PRODUCTS = gql`
             _id 
             name
             description
-            price 
-            quantity
+            price
+            category {
+                name
+              }
         }
     }
 `;
 
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
 
 export const QUERY_USER = gql`
 query user($username: String!)
     {
-        user(username: $username) {
-            _id
-            email
+        user {
             username
+            email
             orders{
                 _id
                 purchaseDate
@@ -47,8 +54,6 @@ query user($username: String!)
                     name
                     description
                     price 
-                    quantity
-                    image
                 }
             }
         }

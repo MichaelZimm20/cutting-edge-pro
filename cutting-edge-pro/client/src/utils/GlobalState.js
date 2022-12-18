@@ -19,12 +19,13 @@ const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useProductReducer({
         products: [],
         cart: [],
-        categories: [],
         cartOpen: false,
+        categories: [],
+        currentCategory: '',
     });
 
     // confirming if state is working
-    console.log(state)
+    console.log('Globalstate:', state)
 
     // dispatch: method use to update our state
     return <Provider value={[state, dispatch]} {...props} />;

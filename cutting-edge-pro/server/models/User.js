@@ -1,5 +1,8 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require('mongoose');
+
+const { Schema } = require("mongoose");
 const bcrypt = require("bcrypt");
+const Order = require('./Order');
 
 const userSchema = new Schema({
   username: {
@@ -19,12 +22,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  orders: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Order'
-    }
-  ],
+  orders: [Order.schema],
 });
 
 // setting up middleware to create password
@@ -46,6 +44,6 @@ userSchema.virtual('orderCount').get(function() {
     return this.orders.length;
   });
 
-const User = model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;

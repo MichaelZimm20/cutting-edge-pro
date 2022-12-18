@@ -14,15 +14,15 @@ export const LOGIN = gql`
 export const ADD_ORDER = gql`
   mutation addOrder($products: [ID]!) {
     addOrder(products: $products) {
-      _id
+      purchaseDate
       products {
-        image
         _id
-        price
-        description
         name
-        quantity
-        size
+        description
+        price
+        category {
+          name
+        }
       }
     }
   }
@@ -50,14 +50,3 @@ export const ADD_ADMIN = gql`
   }
 `;
 
-export const UPDATE_PRODUCT = gql `
-mutation updateProduct($id: ID!, $quantity: Int!) {
-    updateProduct(_id: $id, quantity: $quantity) {
-      image
-      price
-      quantity
-      description
-      name
-    }
-  }
-`;

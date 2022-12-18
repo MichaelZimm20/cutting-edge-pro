@@ -1,5 +1,6 @@
 // import schema snd mongoose
-const { Schema, model } = require("mongoose");
+const { Schema } = require("mongoose");
+const mongoose = require('mongoose');
 
 const productSchema = new Schema({
   name: {
@@ -14,14 +15,14 @@ const productSchema = new Schema({
   price: {
     type: Number,
   },
-  quantity: {
-    type: Number,
-    min: 0,
-    default: 0
-  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
+  }
 });
 
-const Product = model("Product", productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 // export product model
 module.exports = Product;

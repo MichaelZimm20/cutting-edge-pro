@@ -12,15 +12,15 @@ import { setContext } from '@apollo/client/link/context';
 //develop test
 // import './App.css';
 
+import { StoreProvider } from './utils/GlobalState';
 import Navigation from './components/Nav';
 import Home from './pages/Home';
 import Upload from "./pages/Upload";
 import Signup from './pages/SignupPage';
 import Login from './pages/Login';
-import { StoreProvider } from './utils/GlobalState';
 import Wood from './pages/Wood';
 import Metal from './pages/Metal';
-import Vinyl from './pages/Vinyl';
+import Acrylics from './pages/Acylics';
 
 
 const httpLink = createHttpLink({
@@ -95,8 +95,8 @@ function App() {
               element = {<Metal />}
               />
               <Route 
-              exact path="/vinyl"
-              element = {<Vinyl />}
+              exact path="/acrylics"
+              element = {<Acrylics />}
               />
               <Route 
               exact path="/Upload"
