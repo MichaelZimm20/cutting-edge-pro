@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
-import { Card, Button, Container, Row, Col, } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col,Form, FormControl } from 'react-bootstrap';
 import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
@@ -45,7 +45,7 @@ function Metal() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $50</Card.Text>
-              <Card.Text>Quantity: 10</Card.Text>
+              
               <Card.Text>Size: Small</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
@@ -70,7 +70,7 @@ function Metal() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $60</Card.Text>
-              <Card.Text>Quantity: 15</Card.Text>
+              
               <Card.Text>Size: Medium</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
@@ -95,7 +95,7 @@ function Metal() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $70</Card.Text>
-              <Card.Text>Quantity: 20</Card.Text>
+              
               <Card.Text>Size: Large</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
@@ -105,20 +105,34 @@ function Metal() {
         </Row>
         <Row className='justify-content-center mt-4'>
         <Col xs={6}>
-          <Card  style={{ width: '100%' }}>
-            <Card.Img variant="top" src={custom} />
-            <Card.Body>
-              <Card.Title>Custom</Card.Title>
-              <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Card.Text>
-              <Card.Text>Price: $70</Card.Text>
-              <Card.Text>Quantity: 20</Card.Text>
-              <Card.Text>Size: Custom </Card.Text>
-              <Button variant="primary">Add to Cart</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+      <Card style={{ width: '100%' }}>
+        <Card.Img variant="top" src={custom} />
+        <Card.Body>
+          <Card.Title>Custom Size</Card.Title>
+          <Card.Text>
+            Please provide us with your image and demensions of what size you would like. We will review the order and send you a price quote within 24hrs.
+          </Card.Text>
+
+          <Form>
+            <Form.Label htmlFor="customSize">Custom size</Form.Label>
+            <FormControl type="text" name="customSize" id="customSize" placeholder="Enter custom size" />
+          </Form>
+
+          <Form>
+            <Form.Label htmlFor="email">Email</Form.Label>
+            <FormControl type="email" name="email" id="email" placeholder="Enter your email" />
+          </Form>
+
+          <Form>
+            <Form.Label htmlFor="phone">Phone number</Form.Label>
+            <FormControl type="text" name="phone" id="phone" placeholder="Enter your phone number" />
+          </Form>
+
+          
+          <Button variant="primary">Add to Cart</Button>
+        </Card.Body>
+      </Card>
+    </Col>
         </Row>
         </Container>
         

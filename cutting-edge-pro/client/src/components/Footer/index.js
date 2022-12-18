@@ -1,5 +1,5 @@
 
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 import React from 'react';
 
 const Footer = () => {
@@ -15,14 +15,9 @@ const Footer = () => {
           </div>
           <div className="col-auto">
             <ul className="list-inline">
+              
               <li className="list-inline-item">
-              <a href="#" className="mr-3" title="Facebook"><FaFacebookF /></a>
-              </li>
-              <li className="list-inline-item">
-              <a href="#" className="mr-3" title="Twitter"><FaTwitter /></a>
-              </li>
-              <li className="list-inline-item">
-              <a href="#" title="Instagram"><FaInstagram /></a>
+              <a href="https://github.com/MichaelZimm20/cutting-edge-pro" title="Github"><FaGithub /></a>
               </li>
             </ul>
           </div>

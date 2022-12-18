@@ -90,6 +90,7 @@ import '../index.css'
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
+import Acrylic from '../assets/images/acrylic-custom-example.jpg'
 const Home = () => {
     return (
         <div className="bg-color">
@@ -126,7 +127,7 @@ const Home = () => {
                         </Card.Footer>
                     </Card>
                     <Card className="text-center">
-                        <Card.Img variant="top" src={lumber} />
+                        <Card.Img variant="top" src={Acrylic} />
                         <Card.Body>
                             <Card.Title>Acrylic Art</Card.Title>
                             <Card.Text>

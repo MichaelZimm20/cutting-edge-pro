@@ -5,9 +5,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import landingMetal from '../../assets/images/landingpage.jpg'
 import landingWood from '../../assets/images/landing-wood.png'
 import landingAcrylic from '../../assets/images/landing-vinyl.jpg'
+
+
+
 const LandingPage = () => {
   return (
-    <Container>
+    <Container className="h-100 w-100">
       <Row>
       <Col>
           <Card style={{ width: '100%' }}>
