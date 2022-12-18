@@ -21,6 +21,8 @@ import { StoreProvider } from './utils/GlobalState';
 import Wood from './pages/Wood';
 import Metal from './pages/Metal';
 import Acrylic from './pages/Acrylic';
+import Games from "./pages/Games";
+import Tictactoe from "./pages/Tictactoe";
 import Footer from './components/Footer'
 
 
@@ -94,6 +96,14 @@ function App() {
               <Route 
               exact path="/Acrylic"
               element = {<Acrylic />}
+              />
+              <Route 
+              exact path="/Games"
+              element = {<Games />}
+              />
+              <Route 
+              exact path="/Ticktactoe"
+              element = {<Tictactoe />}
               />
               <Route 
               exact path="/Upload"
