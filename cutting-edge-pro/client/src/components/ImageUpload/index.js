@@ -29,8 +29,8 @@ const uploadImage = () => {
 const navigate = useNavigate();
 
 const navigateStripe = () => {
-  // 👇️ navigate to google for testing
-  navigate('/');
+  // 👇️ navigate to home for testing
+  navigate('/home');
 };
 
 return (
