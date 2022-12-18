@@ -16,8 +16,9 @@ import metalEngraving from '../assets/images/metal-sign.jpg'
 const Home = () => {
     return (
         <div className="bg-color">
-            <div className="my-5 vh-100">
+
                 
+            <div className="my-5 vh-100">
                 <CardGroup className="my-auto mx-auto">
                 {/* <div className="col-md-6 d-flex h-50 justify-content-start "> */}
                     <Card>
@@ -66,6 +67,7 @@ const Home = () => {
                         </Card.Footer>
                     </Card>
                 </CardGroup>
+                
                 <Cart />
             </div>
         </div>

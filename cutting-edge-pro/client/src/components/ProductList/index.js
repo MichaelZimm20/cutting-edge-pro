@@ -55,6 +55,27 @@ function ProductList() {
         return state.products.filter(product => product.category._id === currentCategory)
       }
 
+      return (
+        <div className="my-2">
+          <h2>Our Products:</h2>
+          {state.products.length ? (
+            <div className="flex-row">
+              {filterProducts().map((product) => (
+                <ProductItem
+                  key={product._id}
+                  _id={product._id}                 
+                  name={product.name}
+                  price={product.price}
+                />
+              ))}
+            </div>
+          ) : (
+            <h3>You haven't added any products yet!</h3>
+          )}
+          {loading ? <img src={Saw} style={{ width: '200px', height: '200px' }} className='App-logo' alt="loading" /> : null}
+        </div>
+      );
 
 }
 
+export default ProductList

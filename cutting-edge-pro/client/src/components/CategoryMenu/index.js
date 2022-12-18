@@ -41,7 +41,7 @@ function CategoryMenu() {
 
 
     // click handler to help the dropdown navigate onClick to the correct page
-    const handleClick = linkName => {
+    const handleClick1 = (linkName) => {
         if (linkName === 'wood') {
             navigate('/wood')
         } else if (linkName === 'metal') {
@@ -51,14 +51,16 @@ function CategoryMenu() {
         } else {
             navigate('/');
         }
-        // dispatch({
-        //   type: UPDATE_CURRENT_CATEGORY,
-        //   currentCategory: id
-        // });
+        
     };
 
 
-
+const handleClick2 = id => {
+    dispatch({
+        type: UPDATE_CURRENT_CATEGORY,
+        currentCategory: id
+      });
+}
 
 
     // maps through the category names and turn them into a Dropdown link formatted as a button
@@ -69,10 +71,10 @@ function CategoryMenu() {
                 {categories.map((item) => (
                     <Link style={{ textDecoration: 'none', color: '#000000' }}
                         to={`/${item.name.toLowerCase()}`}
-                        onClick={() => handleClick(item.name.toLowerCase())}
+                        onClick={() => handleClick1(item.name.toLowerCase())}
                     >
 
-                        <NavDropdown.Item key={item._id}>{item.name}
+                        <NavDropdown.Item onClick={() => {handleClick2(item._id)}} key={item._id}>{item.name}
 
                         </NavDropdown.Item>
                     </Link>

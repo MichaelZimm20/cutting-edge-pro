@@ -15,6 +15,7 @@ import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
 import products from '../components/Products';
+import ProductList from "../components/ProductList";
 
 function Wood(item) {
 
@@ -116,7 +117,7 @@ function Wood(item) {
               <Button variant="primary"  
               key={item._id}
               onClick={() => addToCart(item)}>Add to Cart</Button>
-             
+          
             </Card.Body>
           </Card>
         </Col>
@@ -189,8 +190,8 @@ function Wood(item) {
           </Card>
         </Col>
         </Row>
+        <ProductList />
         </Container>
-        
         <Cart  key={item._id}addToCart={addToCart}/>
         </div>
         
