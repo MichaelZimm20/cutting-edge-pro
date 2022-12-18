@@ -18,29 +18,6 @@ import products from '../components/Products';
 import ProductList from "../components/ProductList";
 
 function Wood(item) {
-
-  // Image array attempt
-  // const [images, setImages] = useState([]);
-
-  // useEffect(()=>{
-  //   // Get a list of all the files in the directory
-  //   // const imageFiles = require.context('../assets/images/wood', false, /\.png|jpe?g|svg)$/);
-  //   const imageFiles = require.context('../assets/images/wood/small', false, /\.png|jpe?g|svg$/);
-  //   console.log(imageFiles);
-  //   // Map the image file names to an array of objects containing the file name and path
-  //   const images = imageFiles.keys().map(imageFile => {
-  //     return {
-  //       name: imageFile.replace('./', ''),
-  //       path: imageFiles(imageFile)
-  //     }
-  //   });
-  //   setImages(images);
-  
-  // },[]);
-
-
-
-
   // console.log(products);
   
   
@@ -51,7 +28,7 @@ function Wood(item) {
   // console.log(smallProduct.price)
   // console.log(smallProduct.quantity)
   
-  const mediumProduct = products.find(product => product.name.name === 'Medium');
+  // const mediumProduct = products.find(product => product.name.name === 'Medium');
   // console.log(mediumProduct); // {name: {name: 'Medium'}, price: 59.99, quantity: 20}
   // console.log(mediumProduct.name)
   // console.log(mediumProduct.price)
@@ -91,8 +68,8 @@ function Wood(item) {
 
   return (
     <div className='d-flex  mt-3'>
-    <Container>
-      <Row>
+     <Container>
+     {/* <Row>
         <Col>
           <Card style={{ width: '18rem' }}>
             <Carousel>
@@ -189,7 +166,7 @@ function Wood(item) {
             </Card.Body>
           </Card>
         </Col>
-        </Row>
+        </Row> */}
         <ProductList />
         </Container>
         <Cart  key={item._id}addToCart={addToCart}/>

@@ -1,5 +1,5 @@
 import React from "react";
-import Figure from 'react-bootstrap/Figure';
+import { Figure, Card, Button } from 'react-bootstrap';
 
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
@@ -20,21 +20,21 @@ function ProductItem(item) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
-        purchaseQuantity:  parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
 
       idbPromise('cart', 'put', {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1 
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       })
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1}
+        product: { ...item, purchaseQuantity: 1 }
       });
 
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1});
-  }
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+    }
   };
 
 
@@ -42,17 +42,28 @@ function ProductItem(item) {
     _id,
     name,
     price,
+    description
   } = item;
 
 
   return (
-    <Figure>
-      <Figure.Caption>
-        <Figure.Title>{name}</Figure.Title>
-        <span>${price}</span>
-      </Figure.Caption>
-      <button onClick={addToCart}>Add to cart</button>
-    </Figure>
+    // <Figure>
+    //   <Figure.Caption>
+    //     <Figure.Title>{name}</Figure.Title>
+    //     <span>${price}</span>
+          // {description}
+    //   </Figure.Caption>
+    //   <button onClick={addToCart}>Add to cart</button>
+    // </Figure>
+
+    <Card.Body>
+      <Card.Title>{name}</Card.Title>
+      <Card.Text>
+        {description}
+      </Card.Text>
+      <Card.Text>Price: <span>${price}</span></Card.Text>
+      <Button variant="primary" onClick={addToCart}>Add to Cart</Button>
+    </Card.Body>
   );
 }
 

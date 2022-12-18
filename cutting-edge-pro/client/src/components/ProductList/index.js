@@ -5,7 +5,7 @@ import { idbPromise } from '../../utils/helpers';
 import { useStoreContext } from '../../utils/GlobalState';
 
 import ProductItem from '../ProductItem';
-import { QUERY_PRODUCTS } from '../../utils/queries';
+import { QUERY_PRODUCTS_BY_CATEGORY } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
 import Saw from '../../assets/images/circular_saw_blade.png';
@@ -19,7 +19,9 @@ function ProductList() {
     const { currentCategory } = state;
 
     // destructure loading and data for products
-    const { loading, data } = useQuery(QUERY_PRODUCTS);
+    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
+        variables: { categoryId: currentCategory}
+    });
 
     useEffect(() => {
         // if there's data to be stored 
@@ -55,17 +57,16 @@ function ProductList() {
         return state.products.filter(product => product.category._id === currentCategory)
       }
 
+      
       return (
         <div className="my-2">
           <h2>Our Products:</h2>
           {state.products.length ? (
             <div className="flex-row">
-              {filterProducts().map((product) => (
+              {state.products.map(product => (
                 <ProductItem
                   key={product._id}
-                  _id={product._id}                 
-                  name={product.name}
-                  price={product.price}
+                  {...product}               
                 />
               ))}
             </div>

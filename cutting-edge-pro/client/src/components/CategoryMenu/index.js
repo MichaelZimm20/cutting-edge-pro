@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
+import { UPDATE_PRODUCTS, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
+import { QUERY_PRODUCTS_BY_CATEGORY } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -14,6 +15,29 @@ function CategoryMenu() {
     const { categories } = state;
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
     const navigate = useNavigate();
+
+    const { data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
+        variables: { categoryId: state.currentCategory }
+      });
+      useEffect(() => {
+        if (productData) {
+          dispatch({
+            type: UPDATE_PRODUCTS,
+            products: productData.products
+          });
+          productData.products.forEach(product => {
+            idbPromise('products', 'put', product);
+          });
+        } else if (!loading) {
+          idbPromise('products', 'get').then(products => {
+            dispatch({
+              type: UPDATE_PRODUCTS,
+              products: products
+            });
+          });
+        }
+      }, [productData, loading, dispatch]);
+
 
     useEffect(() => {
         //if categoryData exists or has changed from the response of useQuery, then run dispatch()
@@ -39,7 +63,7 @@ function CategoryMenu() {
         }
     }, [categoryData, loading, dispatch]);
 
-
+      
     // click handler to help the dropdown navigate onClick to the correct page
     const handleClick1 = (linkName) => {
         if (linkName === 'wood') {
