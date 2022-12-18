@@ -23,7 +23,7 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 // import { loadStripe } from '@stripe/stripe-js';
 // const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
+import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
     const [state,dispatch] = useStoreContext();
@@ -33,6 +33,12 @@ const Cart = () => {
   // useLazyQuery Hook
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
     
+  const navigate = useNavigate();
+  
+  const navigateUpload = () => {
+  // 👇️ navigate to google for testing
+  navigate('/Upload');
+  };
   
   // useEffect ues to add multiple items to a cart
     useEffect(() => {
@@ -109,9 +115,9 @@ const Cart = () => {
               <strong>Total: ${calculateTotal()}</strong>
               {
                 Auth.loggedIn() ?
-                  <button className=" d-flex justify-content-between"onClick={submitCheckout}>
-                    Checkout
-                  </button>
+                  <button className=" d-flex justify-content-between"onClick={() => {submitCheckout(); navigateUpload();}}>
+                  Checkout
+                </button>
                   :
                   <span>(log in to check out)</span>
               }
