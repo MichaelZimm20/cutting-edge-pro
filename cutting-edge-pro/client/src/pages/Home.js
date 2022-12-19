@@ -141,8 +141,8 @@ const Home = () => {
                     </CardGroup>
                     </Col>
                     
-                        <Col className='card my-3 ' >
-                            <Card>
+                        <Col  >
+                            <Card >
                                 <Card.Img variant="top" />
                                 <Card.Body>
                                     <Card.Title>About Us</Card.Title>
