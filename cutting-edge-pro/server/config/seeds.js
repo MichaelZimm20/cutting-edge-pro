@@ -8,7 +8,7 @@ db.once('open', async () => {
     const categories = await Category.insertMany([
         { name: 'Wood'},
         { name: 'Metal'},
-        { name: 'Vinyl'},
+        { name: 'Acrylics'},
     ]);
     
     console.log('categories seeded');
@@ -89,7 +89,6 @@ db.once('open', async () => {
                 description:
                 'These are examples of small items we can print your image on. Ranging from a key chain to a 4x8 photo.',
                 price: 10.99,
-                quantity: 45
               },
               {
                 name: 'Medium Acrylic Piece' ,
@@ -97,7 +96,6 @@ db.once('open', async () => {
                 description:
                 'These are examples of medium items we can print your image on. The largest cut out in medium is 24" x 24"',
                 price: 29.99,
-                quantity: 20
               },
               {
                 name: 'Large Acrylic Piece',
@@ -105,7 +103,6 @@ db.once('open', async () => {
                 description:
                 "These are examples of large items we can print your image on. The largest cut out in large is 4' x 6'",
                 price: 69.99,
-                quantity: 10
               },
               {
                   name: 'Custom Acrylic Piece',

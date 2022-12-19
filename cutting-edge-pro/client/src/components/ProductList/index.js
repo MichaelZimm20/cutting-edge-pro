@@ -18,10 +18,11 @@ function ProductList() {
     // destructure the currentCategory from globalstate
     const { currentCategory } = state;
 
+
+
     // destructure loading and data for products
-    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
-        variables: { categoryId: currentCategory}
-    });
+    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY)
+  
 
     useEffect(() => {
         // if there's data to be stored 
@@ -61,12 +62,14 @@ function ProductList() {
       return (
         <div className="my-2">
           <h2>Our Products:</h2>
+
+          
           {state.products.length ? (
             <div className="flex-row">
-              {state.products.map(product => (
+              {filterProducts().map(product => (
                 <ProductItem
-                  key={product._id}
-                  {...product}               
+                key={product._id}
+                {...product}               
                 />
               ))}
             </div>

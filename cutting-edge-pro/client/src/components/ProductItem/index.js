@@ -46,6 +46,7 @@ function ProductItem(item) {
   } = item;
 
 
+
   return (
     // <Figure>
     //   <Figure.Caption>

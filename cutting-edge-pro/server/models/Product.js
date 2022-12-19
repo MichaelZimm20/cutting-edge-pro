@@ -1,19 +1,20 @@
 // import schema snd mongoose
-const { Schema } = require("mongoose");
 const mongoose = require('mongoose');
+const { Schema } = require("mongoose");
 
 const productSchema = new Schema({
   name: {
     type: String,
     required: true,
+    trim: true
   },
   description: {
     type: String,
-    required: true,
-    maxlength: 150,
   },
   price: {
     type: Number,
+    required: true,
+    min: 0.99
   },
   category: {
     type: Schema.Types.ObjectId,

@@ -16,28 +16,6 @@ function CategoryMenu() {
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
     const navigate = useNavigate();
 
-    const { data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
-        variables: { categoryId: state.currentCategory }
-      });
-      useEffect(() => {
-        if (productData) {
-          dispatch({
-            type: UPDATE_PRODUCTS,
-            products: productData.products
-          });
-          productData.products.forEach(product => {
-            idbPromise('products', 'put', product);
-          });
-        } else if (!loading) {
-          idbPromise('products', 'get').then(products => {
-            dispatch({
-              type: UPDATE_PRODUCTS,
-              products: products
-            });
-          });
-        }
-      }, [productData, loading, dispatch]);
-
 
     useEffect(() => {
         //if categoryData exists or has changed from the response of useQuery, then run dispatch()
@@ -84,8 +62,8 @@ const handleClick2 = id => {
         type: UPDATE_CURRENT_CATEGORY,
         currentCategory: id
       });
+      
 }
-
 
     // maps through the category names and turn them into a Dropdown link formatted as a button
     return (

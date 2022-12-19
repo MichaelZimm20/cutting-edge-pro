@@ -7,6 +7,14 @@ type Category {
     name: String
   }
   
+  type Product{
+      _id: ID
+      name: String
+      description: String
+      price: Float
+      category: Category
+  }
+  
 type User {
     _id: ID
     username: String
@@ -23,13 +31,6 @@ type Admin {
     users: [User]
 }
 
-type Product{
-    _id: ID
-    name: String
-    description: String
-    price: Float
-    category: Category
-}
 
 type Order{
     _id: ID
@@ -46,9 +47,11 @@ type Auth{
     user: User
 }
 
+
 type Query {
     categories: [Category]
     products(name: String): [Product]
+    productsByCategory(category: ID!): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order

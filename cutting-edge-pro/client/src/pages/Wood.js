@@ -1,20 +1,22 @@
 // import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
 import { pluralize } from "../utils/helpers"
 import { useStoreContext } from '../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY, UPDATE_PRODUCTS } from '../utils/actions';
 import { idbPromise } from "../utils/helpers";
+import { QUERY_PRODUCTS_BY_CATEGORY } from '../utils/queries';
 
 //imports 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
-import React from 'react';
 import { Card, Button, Container, Row, Col, } from 'react-bootstrap';
 import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
-import products from '../components/Products';
+// import products from '../components/Products';
 import ProductList from "../components/ProductList";
 
 function Wood(item) {
@@ -22,7 +24,7 @@ function Wood(item) {
   
   
   
-  const smallProduct = products.find(product => product.name.name === 'Small');
+  // const smallProduct = products.find(product => product.name.name === 'Small');
   // console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
   // console.log(smallProduct.name)
   // console.log(smallProduct.price)
@@ -36,6 +38,29 @@ function Wood(item) {
 
   const [state, dispatch] = useStoreContext();
   const { cart } = state;
+
+  const { loading, data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
+    variables: { categoryId: state.currentCategory }
+  });
+ 
+  useEffect(() => {
+    if (productData) {
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: productData.products
+      });
+      productData.products.forEach(product => {
+        idbPromise('products', 'put', product);
+      });
+    } else if (!loading) {
+      idbPromise('products', 'get').then(products => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: products
+        });
+      });
+    }
+  }, [productData, loading, dispatch]);
 
   const addToCart = (item) => {
     // find the cart item with the matching id
