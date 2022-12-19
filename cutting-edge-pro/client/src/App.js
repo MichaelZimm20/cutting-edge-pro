@@ -23,6 +23,7 @@ import Metal from "./pages/Metal";
 import Acrylic from "./pages/Acrylic";
 import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
+import StripeForm from "./pages/StripeForm"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -71,6 +72,7 @@ function App() {
               <Route exact path="/metal" element={<Metal />} />
               <Route exact path="/Acrylic" element={<Acrylic />} />
               <Route exact path="/Upload" element={<Upload />} />
+              <Route exact path="/Purchase" element={<StripeForm />} />
             </Routes>
 
             <Footer />
