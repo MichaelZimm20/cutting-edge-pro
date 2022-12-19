@@ -32,10 +32,19 @@ code {
   background-color: var(--middle-gray)
 }
 
-
+.carousel-wrapper {
+object-fit: cover;
+}
 
 /* @media screen and (max-width: 768px) {
   .card {
     width: 100%;
   }
 } */
+
+@media (max-width: 900px) {
+  .carousel {
+    width:auto;
+    height:auto;
+  }
+}

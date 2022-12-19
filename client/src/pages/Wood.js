@@ -99,19 +99,20 @@ function Wood(item) {
 
 
   return (
-    <div className='bg-color  d-flex  mt-3 mb-3'>
+    <div className='bg-color  d-flex  mt-3 mb-3 carousel-wrapper'>
       <Container className="mt-3" style={{ width: '100%', height: '100%' }} fluid>
+      <Col >
         <CardGroup className="my-3 mx-3">
           <Card className=" mx-3 " style={{ width: '100%', height: '100%' }}>
             <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src={small1} alt='wood' />
+              <Carousel.Item >
+                <img className="carousel-wrapper d-block w-100" src={small1} alt='wood'  />
               </Carousel.Item>
               <Carousel.Item>
-                <img className="d-block w-100" src={small2} alt='wood' />
+                <img className="carousel-wrapper d-block w-100" src={small2} alt='wood' />
               </Carousel.Item>
               <Carousel.Item>
-                <img className="d-block w-100" src={small3} alt='wood' />
+                <img className="carousel-wrapper d-block w-100" src={small3} alt='wood' />
               </Carousel.Item>
             </Carousel>
             <Card.Body>
@@ -150,7 +151,7 @@ function Wood(item) {
             </Card.Body>
           </Card>
 
-          <Card className="  mx-3" style={{ width: '100%', height: '100%' }}>
+          <Card className="mx-3" style={{ width: '100%', height: '100%' }}>
             <Carousel>
               <Carousel.Item>
                 <img className="d-block w-100" src={large1} alt='wood' />
@@ -176,6 +177,7 @@ function Wood(item) {
 
 
         </CardGroup>
+        </Col>
 
 
         <Col className='justify-content-center mt-3 mb-3'>

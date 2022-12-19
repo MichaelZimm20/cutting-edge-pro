@@ -93,10 +93,10 @@ const Home = () => {
     return (
         <div className=" bg-color d-flex mt-3 ">
             <div className="my-3 mx-3 " >
-                <Container fluid >
+                <Container className="" fluid >
                     <Col >
                     <CardGroup className="my-3 mx-3">
-                        <Card className=" card text-center mx-3">
+                        <Card className=" mx-3  text-center">
                             <Card.Img variant="top" src={woodEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
                                 <Card.Title>Wood Art</Card.Title>
@@ -110,7 +110,7 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
-                        <Card className="card text-center mx-3 ">
+                        <Card className=" text-center mx-3">
                             <Card.Img variant="top" src={metalEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
                                 <Card.Title>Metal Art</Card.Title>
@@ -124,7 +124,7 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
-                        <Card className="card text-center mx-3 ">
+                        <Card className=" text-center mx-3 ">
                             <Card.Img variant="top" src={lumber} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
                                 <Card.Title>Acrylic Art</Card.Title>
@@ -141,8 +141,8 @@ const Home = () => {
                     </CardGroup>
                     </Col>
                     
-                        <Col  >
-                            <Card >
+                        <Col className=' my-3 ' >
+                            <Card>
                                 <Card.Img variant="top" />
                                 <Card.Body>
                                     <Card.Title>About Us</Card.Title>
