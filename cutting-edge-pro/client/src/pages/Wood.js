@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
-import { Card, Button, Container, Row, Col, } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col, CardGroup, } from 'react-bootstrap';
 import Cart from '../components/Cart';
 //import product pictures
 import small1 from '../assets/images/wood-small.webp'
@@ -101,10 +101,10 @@ function Wood(item) {
   return (
     <div className='bg-color  d-flex  mt-3 mb-3'>
     <Container className="mt-3" style={{ width: '100%', height: '100%'}} fluid>
-      <Row>
-        <Col>
-        
-          <Card style={{ width: '100%', height: '100%'}}>
+      
+       
+        <CardGroup className="my-3 mx-3">
+          <Card className="my-3 mx-3 card" style={{ width: '100%', height: '100%'}}>
             <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={small1} alt='wood'/>           
@@ -130,9 +130,8 @@ function Wood(item) {
              
             </Card.Body>
           </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '100%', height: '100%'}}>
+       
+          <Card className="card my-3 mx-3"  style={{ width: '100%', height: '100%'}}>
           <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={medium1} alt='wood'/>           
@@ -155,9 +154,8 @@ function Wood(item) {
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '100%', height: '100%'}}>
+       
+          <Card className="card my-3 mx-3"  style={{ width: '100%', height: '100%'}}>
           <Carousel>
               <Carousel.Item>
             <img className="d-block w-100" src={large1} alt='wood'/>           
@@ -180,11 +178,12 @@ function Wood(item) {
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
-        </Col>
         
-        </Row>
+        
+          </CardGroup>
+        
         <Row className='justify-content-center mt-3 mb-3'>
-        <Col xs={6}>
+        <Col >
           <Card  style={{ width: '100%', height: '100%'}}>
             <Card.Img variant="top" src={large3} />
             <Card.Body>

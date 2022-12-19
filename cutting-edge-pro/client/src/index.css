@@ -31,3 +31,11 @@ code {
 .bg-color {
   background-color: var(--middle-gray)
 }
+
+
+
+/* @media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+} */
