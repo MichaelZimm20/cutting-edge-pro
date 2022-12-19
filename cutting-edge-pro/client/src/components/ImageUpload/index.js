@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
 const navigateStripe = () => {
   // 👇️ navigate to home for testing
-  navigate('/Purchase');
+  navigate('/Checkout');
 };
 
 return (
