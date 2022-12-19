@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StripeContainer from "../components/StripeContainer/StripeContainer";
+import StripeContainer from "../components/StripeContainer";
 import ImageUpload from "../components/ImageUpload";
 
 function Upload() {
