@@ -16,13 +16,16 @@ function ProductList() {
     const [state, dispatch] = useStoreContext();
 
     // destructure the currentCategory from globalstate
-    const { currentCategory } = state;
+    const { currentCategory, products } = state;
 
 
 
     // destructure loading and data for products
-    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY)
+    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
+      variables: {category: currentCategory}
+    })
   
+    console.log('data', data)
 
     useEffect(() => {
         // if there's data to be stored 
@@ -47,31 +50,39 @@ function ProductList() {
             });
           });
         }
-    }, [data, loading, dispatch]);
+    }, [currentCategory, data, loading, dispatch]);
 
-    // if products equal to current catergoy then display those specific products 
-    function filterProducts() {
-        if(!currentCategory) {
-          return state.products;
-        }
+
     
-        return state.products.filter(product => product.category._id === currentCategory)
-      }
+    // if products equal to current catergoy then display those specific products 
+    // function filterProducts() {
+    //     if(!currentCategory) {
+    //       return state.products;
+    //     }
+    
+    //     return state.products.filter(product => product.category._id === currentCategory)
+    //   }
 
+    const filterProducts = products.filter(product => product.category === currentCategory)
       
       return (
         <div className="my-2">
           <h2>Our Products:</h2>
-
+        
           
-          {state.products.length ? (
+          {products.length ? (
             <div className="flex-row">
-              {filterProducts().map(product => (
+              <ul>
+              {filterProducts().map((product) => (
+               <ProductItem key={product._id} item={product} />
+              ))}
+              </ul>
+              {/* {filterProducts().map(product => (
                 <ProductItem
                 key={product._id}
                 {...product}               
                 />
-              ))}
+              ))} */}
             </div>
           ) : (
             <h3>You haven't added any products yet!</h3>

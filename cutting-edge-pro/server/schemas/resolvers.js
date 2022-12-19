@@ -9,7 +9,16 @@ const resolvers = {
       categories: async () => {
         return await Category.find();
       },
-        products: async (parent, { category, name }) => {
+
+      category: async (parent, { _id }) => {
+        return await Category.findOne(_id).populate({
+          path: 'products',
+          model: 'Product'
+        });
+    
+      
+      },
+      productsByCategory: async (parent, { category, name }) => {
           const params = {};
 
           if (category) {
@@ -28,7 +37,37 @@ const resolvers = {
         product: async (parent, { _id }) => {
           return await Product.findById(_id).populate('category');
         },
+
         
+        // productsByCategory: async (parent, args, context, info) => {
+        //   try {
+        //     // Find the Category with the given ID 
+        //     const category = await Category.findById(args.category._id);
+        //     console.log('category', category)
+        //     console.log(args.category._id);
+        //     // if the category does not exist, throw error
+        //     if (!category) {
+        //       throw new Error('Category not found');
+        //     }
+
+        //     // find all products with the given category ID
+        //     const products = await Product.find({ category: category._id });
+        //     console.log('products', products)
+
+        //     // if not products found, throw error 
+        //     if (!products || products.length === 0) {
+        //       throw new Error('No products found by this category id !');
+        //     }
+
+        //     return products;
+        //   }  catch (error) {
+        //     console.log(error);
+        //     throw new Error('Can not find products by category !');
+        //   }
+          
+        
+        // },
+
         user: async (parent, args, context) => {
           if (context.user) {
             const user = await User.findById(context.user._id).populate({

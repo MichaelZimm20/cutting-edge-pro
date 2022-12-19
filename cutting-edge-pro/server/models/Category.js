@@ -10,7 +10,11 @@ const categorySchema = new Schema({
         type: String,
         required: true,
         trim: true
-    }
+    },
+    // products: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Product'
+    // }]
 });
 // assign schema to a mongoose model
 const Category = mongoose.model('Category', categorySchema); 

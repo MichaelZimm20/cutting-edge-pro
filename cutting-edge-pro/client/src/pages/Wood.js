@@ -5,7 +5,7 @@ import { pluralize } from "../utils/helpers"
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY, UPDATE_PRODUCTS } from '../utils/actions';
 import { idbPromise } from "../utils/helpers";
-import { QUERY_PRODUCTS_BY_CATEGORY } from '../utils/queries';
+import { QUERY_PRODUCT, QUERY_PRODUCTS_BY_CATEGORY} from '../utils/queries';
 
 //imports 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,15 +16,52 @@ import Cart from '../components/Cart';
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
-// import products from '../components/Products';
+
 import ProductList from "../components/ProductList";
+
 
 function Wood(item) {
   // console.log(products);
   
+  // const { loading, data } = useQuery(QUERY_PRODUCT, {
+  //   variables: { _id: "639f9dd9d80c3c56404ca859"}
+  // })
+  const [state, dispatch] = useStoreContext();
+  const { cart, currentCategory } = state;
+  // const { loading, data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
+  //   variables: { category: state.currentCategory }
+  // });
   
+  // useEffect(() => {
+  //   if (productData) {
+  //     dispatch({
+  //       type: UPDATE_PRODUCTS,
+  //       products: productData.products
+  //     });
+  //     productData.products.forEach(product => {
+  //       idbPromise('products', 'put', product);
+  //     });
+  //   } else if (!loading) {
+  //     idbPromise('products', 'get').then(products => {
+  //       dispatch({
+  //         type: UPDATE_PRODUCTS,
+  //         products: products
+  //       });
+  //     });
+  //   }
+  // }, [productData, loading, dispatch]);
   
-  // const smallProduct = products.find(product => product.name.name === 'Small');
+  // console.log('products', productData);
+
+
+  // function filterProducts() {
+  //   if(!currentCategory) {
+  //     return state.products;
+  //   }
+  //   return state.products.filter(product => product.category._id === currentCategory)
+  // }
+
+  // const smallProduct = products.find(product => product.name === 'Small');
   // console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
   // console.log(smallProduct.name)
   // console.log(smallProduct.price)
@@ -36,31 +73,8 @@ function Wood(item) {
   // console.log(mediumProduct.price)
   // console.log(mediumProduct.quantity)
 
-  const [state, dispatch] = useStoreContext();
-  const { cart } = state;
-
-  const { loading, data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
-    variables: { categoryId: state.currentCategory }
-  });
+  
  
-  useEffect(() => {
-    if (productData) {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: productData.products
-      });
-      productData.products.forEach(product => {
-        idbPromise('products', 'put', product);
-      });
-    } else if (!loading) {
-      idbPromise('products', 'get').then(products => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products
-        });
-      });
-    }
-  }, [productData, loading, dispatch]);
 
   const addToCart = (item) => {
     // find the cart item with the matching id
@@ -91,10 +105,11 @@ function Wood(item) {
   };
 
 
+
   return (
     <div className='d-flex  mt-3'>
      <Container>
-     {/* <Row>
+     <Row>
         <Col>
           <Card style={{ width: '18rem' }}>
             <Carousel>
@@ -109,12 +124,14 @@ function Wood(item) {
             </Carousel.Item>
             </Carousel>
             <Card.Body>
-              <Card.Title>{smallProduct.name.name}</Card.Title>
+              {/* <Card.Title>{smallProduct.name.name}</Card.Title> */}
               <Card.Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
-              <Card.Text>Price: ${smallProduct.price}</Card.Text>
-              <Card.Text>{smallProduct.quantity} {pluralize("item", products.quantity)} in stock</Card.Text>
+              <Card.Text>
+                </Card.Text>
+              {/* <Card.Text>Price: ${smallProduct.price}</Card.Text>
+              <Card.Text>{smallProduct.quantity} {pluralize("item", products.quantity)} in stock</Card.Text> */}
              
               <Button variant="primary"  
               key={item._id}
@@ -191,7 +208,16 @@ function Wood(item) {
             </Card.Body>
           </Card>
         </Col>
-        </Row> */}
+        </Row>
+        {/* <div>{filterProducts().map((product) => (
+                  <ProductItem
+                    key={product._id}
+                    _id={product._id}
+                    name={product.name}
+                    price={product.price}
+                    description={product.description}
+                  />
+                ))}</div> */}
         <ProductList />
         </Container>
         <Cart  key={item._id}addToCart={addToCart}/>

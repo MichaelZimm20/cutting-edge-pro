@@ -41,7 +41,6 @@ function CategoryMenu() {
         }
     }, [categoryData, loading, dispatch]);
 
-      
     // click handler to help the dropdown navigate onClick to the correct page
     const handleClick1 = (linkName) => {
         if (linkName === 'wood') {
