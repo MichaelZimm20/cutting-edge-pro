@@ -69,7 +69,7 @@ function Wood(item) {
   return (
     <div className='d-flex  mt-3'>
      <Container>
-     {/* <Row>
+     <Row>
         <Col>
           <Card style={{ width: '18rem' }}>
             <Carousel>
@@ -83,19 +83,7 @@ function Wood(item) {
             <img className="d-block w-100" src={metalEngraving} alt='wood'/>         
             </Carousel.Item>
             </Carousel>
-            <Card.Body>
-              <Card.Title>{smallProduct.name.name}</Card.Title>
-              <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Card.Text>
-              <Card.Text>Price: ${smallProduct.price}</Card.Text>
-              <Card.Text>{smallProduct.quantity} {pluralize("item", products.quantity)} in stock</Card.Text>
-             
-              <Button variant="primary"  
-              key={item._id}
-              onClick={() => addToCart(item)}>Add to Cart</Button>
-          
-            </Card.Body>
+            
           </Card>
         </Col>
         <Col>
@@ -166,7 +154,7 @@ function Wood(item) {
             </Card.Body>
           </Card>
         </Col>
-        </Row> */}
+        </Row>
         <ProductList />
         </Container>
         <Cart  key={item._id}addToCart={addToCart}/>

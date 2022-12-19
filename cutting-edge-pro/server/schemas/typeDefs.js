@@ -49,6 +49,7 @@ type Auth{
 type Query {
     categories: [Category]
     products(name: String): [Product]
+    category(_id: ID!): Category
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order

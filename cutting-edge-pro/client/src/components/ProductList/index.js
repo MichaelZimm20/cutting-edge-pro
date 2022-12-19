@@ -5,7 +5,7 @@ import { idbPromise } from '../../utils/helpers';
 import { useStoreContext } from '../../utils/GlobalState';
 
 import ProductItem from '../ProductItem';
-import { QUERY_PRODUCTS_BY_CATEGORY } from '../../utils/queries';
+import { QUERY_PRODUCTS_BY_CATEGORY, QUERY_PRODUCT } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
 import Saw from '../../assets/images/circular_saw_blade.png';
