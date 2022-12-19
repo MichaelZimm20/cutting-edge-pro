@@ -6,7 +6,7 @@ import { idbPromise } from "../../utils/helpers";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import { loadStripe } from '@stripe/stripe-js';
-import Card from 'react-bootstrap/Card';
+import { Card, Button } from 'react-bootstrap';
 import './style.css';
 
 // import fontawesome icons 
@@ -19,6 +19,7 @@ import CartItem from '../CartItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { QUERY_CHECKOUT } from '../../utils/queries';
+import { useNavigate } from 'react-router-dom';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -29,9 +30,15 @@ const Cart = () => {
 
     
   // useLazyQuery Hook
+
+// add link from checkout to upload
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-    
-  
+  const navigate = useNavigate()
+    const navigateUpload = () => {
+      navigate('/Upload')
+    }
+
+
   // useEffect ues to add multiple items to a cart
     useEffect(() => {
       async function getCart() {
@@ -108,9 +115,9 @@ const Cart = () => {
               <strong>Total: ${calculateTotal()}</strong>
               {
                 Auth.loggedIn() ?(
-                  <button className=" d-flex justify-content-between"onClick={submitCheckout}>
+                  <Button className=" d-flex justify-content-between "onClick={() => {submitCheckout(); navigateUpload();}}>
                     Checkout
-                  </button>
+                  </Button>
                  ) :(
                   <span>(log in to check out)</span>
              ) }

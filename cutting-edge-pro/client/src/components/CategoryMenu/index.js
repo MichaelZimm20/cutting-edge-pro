@@ -16,7 +16,7 @@ function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
   const { categories } = state;
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const { data: productData } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
   //     variables: { categoryId: state.currentCategory }
@@ -65,18 +65,18 @@ function CategoryMenu() {
   // }, [categoryData, loading, dispatch]);
 
   // click handler to help the dropdown navigate onClick to the correct page
-  //     const handleClick1 = (linkName) => {
-  //         if (linkName === 'wood') {
-  //             navigate('/wood')
-  //         } else if (linkName === 'metal') {
-  //             navigate('/metal')
-  //         } else if (linkName === 'acrylics') {
-  //             navigate('/acrylics')
-  //         } else {
-  //             navigate('/');
-  //         }
+      const handleClick1 = (linkName) => {
+          if (linkName === 'wood') {
+              navigate('/wood')
+          } else if (linkName === 'metal') {
+              navigate('/metal')
+          } else if (linkName === 'acrylics') {
+              navigate('/acrylics')
+          } else {
+              navigate('/');
+          }
 
-  //     };
+      };
 
   // const handleClick2 = id => {
   //     dispatch({
@@ -101,6 +101,7 @@ function CategoryMenu() {
             key={item._id}
             onClick={() => {
               handleClick(item._id);
+              handleClick1(item.name.toLowerCase());
             }}
           >
             {item.name}
