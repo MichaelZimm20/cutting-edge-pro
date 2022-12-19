@@ -49,4 +49,3 @@ export const ADD_ADMIN = gql`
     }
   }
 `;
-

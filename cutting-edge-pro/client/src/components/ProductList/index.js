@@ -1,3 +1,5 @@
+///// CHECKED
+
 // imports 
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
@@ -5,7 +7,7 @@ import { idbPromise } from '../../utils/helpers';
 import { useStoreContext } from '../../utils/GlobalState';
 
 import ProductItem from '../ProductItem';
-import { QUERY_PRODUCTS_BY_CATEGORY, QUERY_PRODUCT } from '../../utils/queries';
+import { QUERY_PRODUCTS_BY_CATEGORY, QUERY_PRODUCT, QUERY_ALL_PRODUCTS, QUERY_PRODUCTS } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
 import Saw from '../../assets/images/circular_saw_blade.png';
@@ -19,9 +21,9 @@ function ProductList() {
     const { currentCategory } = state;
 
     // destructure loading and data for products
-    const { loading, data } = useQuery(QUERY_PRODUCTS_BY_CATEGORY, {
-        variables: { categoryId: currentCategory}
-    });
+    const { loading, data } = useQuery(QUERY_ALL_PRODUCTS, 
+        
+    );
 
     useEffect(() => {
         // if there's data to be stored 
@@ -54,7 +56,7 @@ function ProductList() {
           return state.products;
         }
     
-        return state.products.filter(product => product.category._id === currentCategory)
+        return state.products.filter((product) => product.category._id === currentCategory)
       }
 
       
@@ -63,10 +65,14 @@ function ProductList() {
           <h2>Our Products:</h2>
           {state.products.length ? (
             <div className="flex-row">
-              {state.products.map(product => (
+              {filterProducts().map((product) => (
                 <ProductItem
                   key={product._id}
-                  {...product}               
+                  _id={product._id} 
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  description={product.description}              
                 />
               ))}
             </div>

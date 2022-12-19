@@ -1,35 +1,23 @@
 // import gql from apollo/client
 import { gql } from "@apollo/client";
 
-// show and get one product at a time
-export const QUERY_PRODUCTS_BY_CATEGORY = gql`
-  query getProducts($categoryId: ID!) {
-    products(categoryId: $categoryId) {
+
+export const QUERY_PRODUCTS = gql`
+  query getProducts($category: ID) {
+    products(category: $category) {
       _id
       name
       description
       price
+      quantity
+      image
       category {
-        name
+        _id
       }
     }
   }
 `;
 
-export const QUERY_PRODUCT = gql`
-  query product($id: ID!) {
-    product(_id: $id) {
-      _id
-      category {
-        _id
-        name
-      }
-      description
-      name
-      price
-    }
-  }
-`;
 
 // show and get all products
 export const QUERY_ALL_PRODUCTS = gql`
@@ -56,14 +44,7 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
-export const QUERY_CATEGORY = gql`
-  query category($id: ID!) {
-    category(_id: $id) {
-      _id
-      name
-    }
-  }
-`;
+
 
 export const QUERY_USER = gql`
   query user($username: String!) {

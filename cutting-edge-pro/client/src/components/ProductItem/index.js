@@ -1,6 +1,9 @@
+// CHECKED
+
+
 import React from "react";
 import { Figure, Card, Button } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
@@ -8,9 +11,17 @@ import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-
+  
+  const {
+    image,
+    _id,
+    name,
+    price,
+    description
+  } = item;
+  
   const { cart } = state;
-
+  
   const addToCart = () => {
     // find the cart item with the matching id
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
@@ -38,12 +49,6 @@ function ProductItem(item) {
   };
 
 
-  const {
-    _id,
-    name,
-    price,
-    description
-  } = item;
 
 
   return (
@@ -57,6 +62,12 @@ function ProductItem(item) {
     // </Figure>
 
     <Card.Body>
+      <Link to={`/products/${_id}`}>
+        <img
+          alt={name}
+          src={`/images/${image}`}
+        />
+        </Link>
       <Card.Title>{name}</Card.Title>
       <Card.Text>
         {description}

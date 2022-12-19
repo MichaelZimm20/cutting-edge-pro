@@ -83,7 +83,7 @@ function Wood(item) {
             <img className="d-block w-100" src={metalEngraving} alt='wood'/>         
             </Carousel.Item>
             </Carousel>
-            
+            <ProductList />
           </Card>
         </Col>
         <Col>
@@ -155,7 +155,6 @@ function Wood(item) {
           </Card>
         </Col>
         </Row>
-        <ProductList />
         </Container>
         <Cart  key={item._id}addToCart={addToCart}/>
         </div>

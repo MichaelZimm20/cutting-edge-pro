@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Auth from '../../utils/auth';
 import { useLazyQuery } from '@apollo/client';
 import { idbPromise } from "../../utils/helpers";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-// import { loadStripe } from '@stripe/stripe-js';
-// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+import { loadStripe } from '@stripe/stripe-js';
 import Card from 'react-bootstrap/Card';
 import './style.css';
 
@@ -21,6 +20,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 
 const Cart = () => {
@@ -46,13 +46,13 @@ const Cart = () => {
 
 
     // useEffect use to handle stripe checkout and redirect to stripe
-    // useEffect(() => {
-    //   if (data) {
-    //     stripePromise.then((res) => {
-    //       res.redirectToCheckout({ sessionId: data.checkout.session });
-    //     });
-    //   }
-    // }, [data]);
+    useEffect(() => {
+      if (data) {
+        stripePromise.then((res) => {
+          res.redirectToCheckout({ sessionId: data.checkout.session });
+        });
+      }
+    }, [data]);
     
     // open cart when item is added
     function toggleCart() {
@@ -62,21 +62,13 @@ const Cart = () => {
     // will add up the prices of everything saved in state.cart
     function calculateTotal() {
       let sum = 0;
-      state.cart.forEach(item => {
+      state.cart.forEach((item) => {
         sum += item.price * item.purchaseQuantity;
       });
       return sum.toFixed(2);
     }
 
-    // if the cart is closed display the cart symbol
-    if (!state.cartOpen) {
-        return (
-            <div className='cart-closed' onClick={toggleCart}>
-                <span role='img' aria-label='cart'> <FontAwesomeIcon icon={faBasketShopping} style={{ width: '35px', height: '35px'}}/></span>
-               
-            </div>
-        )
-    }
+    
 
     // upon submission get items for checkout and push them to new array
     function submitCheckout() {
@@ -92,6 +84,15 @@ const Cart = () => {
         variables: { products: productIds }
       })
     }
+    // if the cart is closed display the cart symbol
+    if (!state.cartOpen) {
+      return (
+          <div className='cart-closed' onClick={toggleCart}>
+              <span role='img' aria-label='cart'> <FontAwesomeIcon icon={faBasketShopping} style={{ width: '35px', height: '35px'}}/></span>
+             
+          </div>
+      )
+  }
 
   return (
     <div className="cart bg-light">
@@ -106,13 +107,13 @@ const Cart = () => {
             <div className="flex-row space-between">
               <strong>Total: ${calculateTotal()}</strong>
               {
-                Auth.loggedIn() ?
+                Auth.loggedIn() ?(
                   <button className=" d-flex justify-content-between"onClick={submitCheckout}>
                     Checkout
                   </button>
-                  :
+                 ) :(
                   <span>(log in to check out)</span>
-              }
+             ) }
             </div>
           </div>
       ) : (

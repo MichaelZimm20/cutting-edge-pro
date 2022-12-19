@@ -29,6 +29,7 @@ type Product{
     description: String
     price: Float
     category: Category
+    image: String
 }
 
 type Order{
@@ -48,8 +49,7 @@ type Auth{
 
 type Query {
     categories: [Category]
-    products(name: String): [Product]
-    category(_id: ID!): Category
+    products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
