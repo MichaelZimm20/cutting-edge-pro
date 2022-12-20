@@ -66,7 +66,7 @@ function Products(item) {
 
 
   return (
-    <div className='d-flex  mt-3'>
+    <div className='d-flex  mt-3 bg-color'>
      <Container>
             <CategoryMenu />
             <ProductList />

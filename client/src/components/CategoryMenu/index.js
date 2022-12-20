@@ -94,7 +94,7 @@ function CategoryMenu() {
   // maps through the category names and turn them into a Dropdown link formatted as a button
   return (
     <div>
-      <NavDropdown title="Products" id="basic-nav-dropdown">
+      <NavDropdown  title="Products" id="basic-nav-dropdown">
         {categories.map((item) => (
           <NavDropdown.Item
             style={{ textDecoration: "none", color: "#000000" }}
@@ -108,7 +108,7 @@ function CategoryMenu() {
           </NavDropdown.Item>
         ))}
 
-        <NavDropdown.Divider />
+        {/* <NavDropdown.Divider /> */}
         {/* <NavDropdown.Item href="/games">Games</NavDropdown.Item> */}
       </NavDropdown>
     </div>

@@ -27,13 +27,14 @@ code {
     monospace;
 }
 
-
+/* Sets background image */
 .bg-color {
   background-image: url('./assets/images/laser-cutting-wood.webp');
   
-  background-color: var(--middle-gray)
+  /* background-color: var(--middle-gray) */
 }
 
+/* handles carousel image styling */
 .carousel-slide img {
   width: 100%;
   height: 100%;
@@ -41,6 +42,7 @@ code {
   
 }
 
+/* handles 4th card styling/ general card styling */
 .custom-card {
   display: flex;
   flex-wrap: wrap;
