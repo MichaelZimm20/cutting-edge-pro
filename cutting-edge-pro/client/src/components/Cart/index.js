@@ -23,6 +23,9 @@ import { useNavigate } from 'react-router-dom';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
+// import { loadStripe } from '@stripe/stripe-js';
+// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
     const [state,dispatch] = useStoreContext();
@@ -33,12 +36,14 @@ const Cart = () => {
 
 // add link from checkout to upload
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  const navigate = useNavigate()
-    const navigateUpload = () => {
-      navigate('/Upload')
-    }
-
-
+    
+  const navigate = useNavigate();
+  
+  const navigateUpload = () => {
+  // 👇️ navigate to google for testing
+  navigate('/Upload');
+  };
+  
   // useEffect ues to add multiple items to a cart
     useEffect(() => {
       async function getCart() {
