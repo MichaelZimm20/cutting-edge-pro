@@ -89,27 +89,48 @@ import '../index.css'
 import lumber from '../assets/images/Lumber-cut.jpg'
 import woodEngraving from '../assets/images/engraved-wood.jpg'
 import metalEngraving from '../assets/images/metal-sign.jpg'
+// import { Carousel } from "bootstrap/dist/js/bootstrap.bundle";
+import { Carousel } from 'react-bootstrap';
+
+// Image imports for slideshow
+import acrylicPic from '../assets/images/acrylic-large-2.webp';
+import woodPic from '../assets/images/large-wood-3.jpg';
+import metalPic from '../assets/images/medium-metal-3.jpg';
+
 const Home = () => {
     return (
         <div className=" bg-color d-flex mt-3 ">
             <div className="my-3 mx-3 " >
                 <Container className="" fluid >
-                    <Col >
+                    
                     <CardGroup className="my-3 mx-3">
-                        <Card className=" mx-3 text-center">
-                            <Card.Img variant="top" src={woodEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        <Card className=" mx-3 text-center" style={{width:'75%',  opacity: 0.75 }}>
+                            <Carousel>
+                            <Carousel.Item className="carousel-slide img">
+                            <Card.Img variant="top" src={acrylicPic} style={{ width: '100%', height: '75vh', objectFit: 'contain', opacity: 1  }} />
+                            </Carousel.Item>
+                            <Carousel.Item className="carousel-slide img">
+                            <Card.Img variant="top" src={woodPic} style={{ width: '100%', height: '75vh', objectFit: 'contain',opacity: 1 }} />
+                            </Carousel.Item>
+                            <Carousel.Item className="carousel-slide img">
+                            <Card.Img variant="top" src={metalPic} style={{ width: '100%', height: '75vh', objectFit: 'contain', opacity: 1 }} />
+                            </Carousel.Item>
+                            </Carousel>
                             <Card.Body>
-                                <Card.Title>Wood Art</Card.Title>
+                                <Card.Title>Products</Card.Title>
                                 <Card.Text>
-                                    Click here to browse our wood art products!
+                                    Click here to browse our products!
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <Link to="/wood">
-                                    <Button variant="primary" className="w-100">Shop Wood</Button>
+                                <Link to="/products">
+                                    <Button variant="primary" className="w-100">Shop Products</Button>
                                 </Link>
                             </Card.Footer>
+                            
+                            
                         </Card>
+                        {/*  */}
                         {/* <Card className=" text-center mx-3">
                             <Card.Img variant="top" src={metalEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
@@ -139,7 +160,7 @@ const Home = () => {
                             </Card.Footer>
                         </Card> */}
                     </CardGroup>
-                    </Col>
+                    
                     
                         <Col className=' my-3 ' >
                             <Card>

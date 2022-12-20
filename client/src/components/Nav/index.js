@@ -20,7 +20,7 @@ function Navigation() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/cart">Cart</Nav.Link>
+                {/* <Nav.Link href="/cart">Cart</Nav.Link> */}
                 <Nav.Link href="/products">Products</Nav.Link>
                   
                 <Nav.Link href="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
@@ -39,7 +39,7 @@ function Navigation() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/cart">Cart</Nav.Link>
+                {/* <Nav.Link href="/cart">Cart</Nav.Link> */}
                 <Nav.Link href="/products">Products</Nav.Link>
                   
                 <Nav.Link href="/signuppage">Signup</Nav.Link>
