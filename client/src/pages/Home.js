@@ -124,7 +124,11 @@ const Home = () => {
                             </Card.Body>
                             <Card.Footer>
                                 <Link to="/products">
+<<<<<<< HEAD
                                     <Button variant="primary" className="w-100">Shop Products</Button>
+=======
+                                    <Button variant="primary" className="w-100">Shop Wood</Button>
+>>>>>>> b0a0a8f56e4eb7c74731086ba6dee49ca8dda785
                                 </Link>
                             </Card.Footer>
                             
