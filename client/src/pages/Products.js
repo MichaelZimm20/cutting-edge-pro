@@ -12,17 +12,17 @@ import React from 'react';
 import { Card, Button, Container, Row, Col, Form, FormControl } from 'react-bootstrap';
 import Cart from '../components/Cart';
 //import product pictures
-import small1 from '../assets/images/wood-small.webp'
-import small2 from '../assets/images/wood-small-cut-2.jpg'
-import small3 from '../assets/images/wood-small-cut.webp'
+// import small1 from '../assets/images/wood-small.webp'
+// import small2 from '../assets/images/wood-small-cut-2.jpg'
+// import small3 from '../assets/images/wood-small-cut.webp'
 
-import medium1 from '../assets/images/medium-wood-4.jpg'
-import medium2 from '../assets/images/medium-wood.webp'
-import medium3 from '../assets/images/medium-wood-3.jpg'
+// import medium1 from '../assets/images/medium-wood-4.jpg'
+// import medium2 from '../assets/images/medium-wood.webp'
+// import medium3 from '../assets/images/medium-wood-3.jpg'
 
-import large1 from '../assets/images/large-wood-3.jpg'
-import large2 from '../assets/images/large-wood-2.jpg'
-import large3 from '../assets/images/example-logo.jpg'
+// import large1 from '../assets/images/large-wood-3.jpg'
+// import large2 from '../assets/images/large-wood-2.jpg'
+// import large3 from '../assets/images/example-logo.jpg'
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 

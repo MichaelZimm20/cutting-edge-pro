@@ -14,6 +14,7 @@ function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
   
   const {
+    image,
     _id,
     name,
     price,
@@ -54,10 +55,13 @@ function ProductItem(item) {
   return (
    
   <div className="card px-1 py-1 m-2">
-    {/* <Carousel>
-      <Carousel.Item></Carousel.Item>
-    </Carousel> */}
     <Card.Body>
+    <Link to={`/products/${_id}`}>
+        <img style={{width: '50%', height: '75vh', }}
+          alt={name}
+          src={`/images/${image}`}
+        />
+      </Link>
       <Card.Title>{name}</Card.Title>
       <Card.Text>
         {description}
