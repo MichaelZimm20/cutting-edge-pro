@@ -23,6 +23,7 @@ function Navigation() {
               <Nav className="me-auto">
                 {/* <Nav.Link href="/cart">Cart</Nav.Link> */}
                 <Nav.Link href="/products">Products</Nav.Link>
+                <Nav.Link href="/game">Game</Nav.Link>
                   
                 <Nav.Link href="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
               </Nav>
@@ -42,7 +43,7 @@ function Navigation() {
               <Nav className="me-auto">
                 {/* <Nav.Link href="/cart">Cart</Nav.Link> */}
                 <Nav.Link href="/products">Products</Nav.Link>
-                  
+                <Nav.Link href="/game">Game</Nav.Link>
                 <Nav.Link href="/signuppage">Signup</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>

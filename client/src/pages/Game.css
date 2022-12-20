@@ -1,0 +1,48 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 6rem);
+    place-items: center;
+    justify-content: center;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cell:hover {
+    cursor: pointer;
+    background-color: lightgray;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .new-game-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-game-button:hover {
+    background-color: green;
+    color: white;
+  }
+  

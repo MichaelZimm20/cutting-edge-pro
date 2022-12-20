@@ -11,7 +11,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 //develop test
 import "./App.css";
-
+import Game from "./pages/Game";
 import Navigation from "./components/Nav";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
@@ -53,7 +53,7 @@ function App() {
              
                 <Route exact path="/" element={<LandingPage/>} />
               
-
+                <Route path="/game" element={<Game />} />
               <Route path="/home" element={<Home />} />
               <Route path="/signuppage" element={<Signup />} />
               <Route exact path="/login" element={<Login />} />
