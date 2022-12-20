@@ -99,20 +99,20 @@ function Wood(item) {
 
 
   return (
-    <div className='bg-color  d-flex  mt-3 mb-3 carousel-wrapper'>
-      <Container className="mt-3" style={{ width: '100%', height: '100%' }} fluid>
+    <div className='bg-color  d-flex  mt-3 mb-3'>
+      <Container className="mt-3 opacity-75"  fluid>
       <Col >
         <CardGroup className="my-3 mx-3">
-          <Card className=" mx-3 " style={{ width: '100%', height: '100%' }}>
+          <Card className="mx-3 " style={{ width: '100%', height: 'auto' }} >
             <Carousel>
-              <Carousel.Item >
-                <img className="carousel-wrapper d-block w-100" src={small1} alt='wood'  />
+              <Carousel.Item className="carousel-slide img">
+                <img   src={small1} alt='wood'  />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="carousel-wrapper d-block w-100" src={small2} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img  src={small2} alt='wood' />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="carousel-wrapper d-block w-100" src={small3} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img   src={small3} alt='wood' />
               </Carousel.Item>
             </Carousel>
             <Card.Body>
@@ -127,17 +127,17 @@ function Wood(item) {
                 onClick={() => addToCart(item)}>Add to Cart</Button>
             </Card.Body>
           </Card>
-          <Card className="mx-3" style={{ width: '100%', height: '100%' }}>
+          <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
             <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src={medium1} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium1} alt='wood' />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={medium2} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium2} alt='wood' />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={medium3} alt='wood' />
-              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium3} alt='wood' />
+              </Carousel.Item >
             </Carousel>
             <Card.Body>
               <Card.Title>Medium</Card.Title>
@@ -145,22 +145,22 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $60</Card.Text>
-              <Card.Text>Quantity: 15</Card.Text>
+              {/* <Card.Text>Quantity: 15</Card.Text> */}
               <Card.Text>Size: Medium</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
 
-          <Card className="mx-3" style={{ width: '100%', height: '100%' }}>
+          <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
             <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src={large1} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large1} alt='wood' />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={large2} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large2} alt='wood' />
               </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={large3} alt='wood' />
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large3} alt='wood' />
               </Carousel.Item>
             </Carousel>
             <Card.Body>
@@ -169,7 +169,7 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $70</Card.Text>
-              <Card.Text>Quantity: 20</Card.Text>
+              {/* <Card.Text>Quantity: 20</Card.Text> */}
               <Card.Text>Size: Large</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
@@ -180,8 +180,8 @@ function Wood(item) {
         </Col>
 
 
-        <Col className='justify-content-center mt-3 mb-3'>
-          <Card style={{ width: '100%', height: '100%' }}>
+        <Col className='custom-card  mt-3 mb-3'fluid>
+          <Card className="mx-3" >
             <Card.Img variant="top" src={large3} />
             <Card.Body>
               <Card.Title>Custom</Card.Title>
@@ -189,7 +189,7 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $70</Card.Text>
-              <Card.Text>Quantity: 20</Card.Text>
+              {/* <Card.Text>Quantity: 20</Card.Text> */}
               <Card.Text>Size: Custom </Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
@@ -198,7 +198,7 @@ function Wood(item) {
 
       </Container>
 
-      <Cart key={item._id} addToCart={addToCart} />
+      <Cart className='cart' key={item._id} addToCart={addToCart} />
     </div>
 
   )

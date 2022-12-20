@@ -96,7 +96,7 @@ const Home = () => {
                 <Container className="" fluid >
                     <Col >
                     <CardGroup className="my-3 mx-3">
-                        <Card className=" mx-3  text-center">
+                        <Card className=" mx-3 text-center">
                             <Card.Img variant="top" src={woodEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
                                 <Card.Title>Wood Art</Card.Title>
