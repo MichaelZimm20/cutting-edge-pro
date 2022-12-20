@@ -72,28 +72,28 @@ function Wood(item) {
     // find the cart item with the matching id
     const itemInCart = cart.find((cartItem) => cartItem._id === item._id);
 
-    
+
 
     // if there was a match, call UPDATE with a new purchase quantity
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: item._id,
-        purchaseQuantity:  parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
 
       idbPromise('cart', 'put', {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1 
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       })
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1}
+        product: { ...item, purchaseQuantity: 1 }
       });
 
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1});
-  }
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+    }
   };
 
 
@@ -103,26 +103,28 @@ function Wood(item) {
             <ProductList />
      <Row>
         <Col>
+        <CardGroup>
           <Card style={{ width: '18rem' }}>
             <Carousel>
-              <Carousel.Item>
-            <img className="d-block w-100" src={small1} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={small2}alt='wood' />           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={small3} alt='wood'/>         
-            </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img   src={small1} alt='wood'  />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img  src={small2} alt='wood' />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img   src={small3} alt='wood' />
+              </Carousel.Item>
             </Carousel>
-<<<<<<< HEAD
-=======
+
+
             <Card.Body>
               <Card.Title>{smallProduct.name.name}</Card.Title>
               <Card.Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: ${smallProduct.price}</Card.Text>
+
 
               <Card.Text>Size: Small</Card.Text>
               
@@ -131,22 +133,28 @@ function Wood(item) {
               key={item._id}
               onClick={() => addToCart(item)}>Add to Cart</Button>
              
-            </Card.Body>
->>>>>>> 2dc16fe426c3a4b2fe549171257fd4b1fe61917d
+
+              <Card.Text>{smallProduct.quantity}  Size: Small</Card.Text>
+              <Button variant="primary"
+                key={item._id}
+                onClick={() => addToCart(item)}>Add to Cart</Button>
+
+                </Card.Body>
+
+
           </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-          <Carousel>
-              <Carousel.Item>
-            <img className="d-block w-100" src={medium1} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={medium2} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={medium3} alt='wood'/>           
-            </Carousel.Item>
+          
+          <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
+            <Carousel>
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium1} alt='wood' />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium2} alt='wood' />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img  src={medium3} alt='wood' />
+              </Carousel.Item >
             </Carousel>
             <Card.Body>
               <Card.Title>Medium</Card.Title>
@@ -154,24 +162,23 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $60</Card.Text>
-              
+              {/* <Card.Text>Quantity: 15</Card.Text> */}
               <Card.Text>Size: Medium</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-          <Carousel>
-              <Carousel.Item>
-            <img className="d-block w-100" src={large1} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={large2} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={large3} alt='wood'/>           
-            </Carousel.Item>
+
+          <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
+            <Carousel>
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large1} alt='wood' />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large2} alt='wood' />
+              </Carousel.Item>
+              <Carousel.Item className="carousel-slide img">
+                <img className="" src={large3} alt='wood' />
+              </Carousel.Item>
             </Carousel>
             <Card.Body>
               <Card.Title>Large</Card.Title>
@@ -179,49 +186,39 @@ function Wood(item) {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
               <Card.Text>Price: $70</Card.Text>
-              
+              {/* <Card.Text>Quantity: 20</Card.Text> */}
               <Card.Text>Size: Large</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
+
+
+        </CardGroup>
         </Col>
-        
-        </Row>
-        <Row className='justify-content-center mt-4'>
-        <Col xs={6}>
-      <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={large3} />
-        <Card.Body>
-          <Card.Title>Custom Size</Card.Title>
-          <Card.Text>
-            Please provide us with your image and dimensions of what size you would like. We will review the order and send you a price quote within 24hrs.
-          </Card.Text>
+      </Row>
 
-          <Form>
-            <Form.Label htmlFor="customSize">Custom size</Form.Label>
-            <FormControl type="text" name="customSize" id="customSize" placeholder="Enter custom size" />
-          </Form>
+        <Col className='custom-card  mt-3 mb-3'fluid>
+          <Card className="mx-3" >
+            <Card.Img variant="top" src={large3} />
+            <Card.Body>
+              <Card.Title>Custom</Card.Title>
+              <Card.Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </Card.Text>
+              <Card.Text>Price: $70</Card.Text>
+              {/* <Card.Text>Quantity: 20</Card.Text> */}
+              <Card.Text>Size: Custom </Card.Text>
+              <Button variant="primary">Add to Cart</Button>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          <Form>
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <FormControl type="email" name="email" id="email" placeholder="Enter your email" />
-          </Form>
+      </Container>
 
-          <Form>
-            <Form.Label htmlFor="phone">Phone number</Form.Label>
-            <FormControl type="text" name="phone" id="phone" placeholder="Enter your phone number" />
-          </Form>
+      <Cart className='cart' key={item._id} addToCart={addToCart} />
+    </div>
 
-          
-          <Button variant="primary">Add to Cart</Button>
-        </Card.Body>
-      </Card>
-    </Col>
-        </Row>
-        </Container>
-        <Cart  key={item._id}addToCart={addToCart}/>
-        </div>
-        
-        )}
+  )
+}
 
-        export default Wood;
+export default Wood;

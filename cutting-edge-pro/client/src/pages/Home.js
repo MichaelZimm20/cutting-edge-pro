@@ -95,11 +95,8 @@ import Acrylic from '../assets/images/acrylic-custom-example.jpg'
 const Home = () => {
     return (
         <div className="bg-color">
-<<<<<<< HEAD
 
                 
-=======
->>>>>>> 2dc16fe426c3a4b2fe549171257fd4b1fe61917d
             <div className="my-5 vh-100">
                 <CardGroup className="my-auto mx-auto">
                     <Card className="text-center">
