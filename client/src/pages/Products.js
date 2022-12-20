@@ -26,7 +26,7 @@ import large3 from '../assets/images/example-logo.jpg'
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 
-function Wood(item) {
+function Products(item) {
   // console.log(products);
   
   // use state for globalstate and dispatch to update the globalstate
@@ -190,4 +190,4 @@ function Wood(item) {
   )
 }
 
-export default Wood;
+export default Products;

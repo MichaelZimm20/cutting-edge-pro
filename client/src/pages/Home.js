@@ -105,7 +105,7 @@ const Home = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <Link to="/product">
+                                <Link to="/products">
                                     <Button variant="primary" className="w-100">Shop Wood</Button>
                                 </Link>
                             </Card.Footer>
