@@ -12,17 +12,6 @@ import { setContext } from "@apollo/client/link/context";
 //develop test
 import "./App.css";
 
-<<<<<<< HEAD
-import { StoreProvider } from './utils/GlobalState';
-import Navigation from './components/Nav';
-import Home from './pages/Home';
-import Upload from "./pages/Upload";
-import Signup from './pages/SignupPage';
-import Login from './pages/Login';
-import Wood from './pages/Wood';
-import Metal from './pages/Metal';
-import Acrylics from './pages/Acylics';
-=======
 import Navigation from "./components/Nav";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
@@ -35,7 +24,6 @@ import Acrylic from "./pages/Acrylic";
 import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import Checkout from "./pages/Checkout";
->>>>>>> 2dc16fe426c3a4b2fe549171257fd4b1fe61917d
 
 
 const httpLink = createHttpLink({

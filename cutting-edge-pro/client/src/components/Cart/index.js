@@ -25,7 +25,6 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 // import { loadStripe } from '@stripe/stripe-js';
 // const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
     const [state,dispatch] = useStoreContext();
