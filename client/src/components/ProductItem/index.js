@@ -10,6 +10,7 @@ import { idbPromise } from "../../utils/helpers";
 import { Carousel } from "bootstrap/dist/js/bootstrap.bundle";
 
 
+
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
   
@@ -54,8 +55,8 @@ function ProductItem(item) {
 
   return (
    
-  <div className="card px-1 py-1 m-2">
-    <Card.Body>
+  <div animateIn="fadeIn" className="card px-1 py-1 m-2">
+    <Card.Body >
     <Link to={`/products/${_id}`}>
         <img style={{width: '50%', height: '75vh', }}
           alt={name}
