@@ -77,7 +77,7 @@ const Home = () => {
                     </CardGroup>
 
 
-                    <Col className=' my-3 ' >
+                    <Col className='my-3' >
                         <Card>
                             <Card.Img variant="top" />
                             <Card.Body>
