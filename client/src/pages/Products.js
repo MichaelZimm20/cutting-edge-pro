@@ -23,9 +23,8 @@ import medium3 from '../assets/images/medium-wood-3.jpg'
 import large1 from '../assets/images/large-wood-3.jpg'
 import large2 from '../assets/images/large-wood-2.jpg'
 import large3 from '../assets/images/example-logo.jpg'
-
-import products from '../components/Products';
 import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu";
 
 function Wood(item) {
   // console.log(products);
@@ -36,37 +35,6 @@ function Wood(item) {
   // destructure the currentCategory from globalstate
   const { cart, currentCategory } = state;
   console.log(currentCategory);
-
-  
-  const smallProduct = products.find(product => product.name === 'wood');
-  // console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
-  // console.log(smallProduct.name)
-  // console.log(smallProduct.price)
-  // console.log(smallProduct.quantity)
-  
-  // const mediumProduct = products.find(product => product.name.name === 'Medium');
-  // console.log(mediumProduct); // {name: {name: 'Medium'}, price: 59.99, quantity: 20}
-  // console.log(mediumProduct.name)
-  // console.log(mediumProduct.price)
-  // console.log(mediumProduct.quantity)
-
-
-     // if products equal to current catergoy then display those specific products 
-    //  function filterProducts() {
-    //   if(!currentCategory) {
-    //     return state.products;
-    //   }
-  
-    //   return state.products.filter((product) => {
-    //     console.log('product', product);
-    //     return product.name === 'wood'
-      
-        
-    //   })
-    // }
-
-
-
 
   const addToCart = (item) => {
     // find the cart item with the matching id
@@ -100,8 +68,9 @@ function Wood(item) {
   return (
     <div className='d-flex  mt-3'>
      <Container>
+            <CategoryMenu />
             <ProductList />
-     <Row>
+     {/* <Row>
         <Col>
         <Card.Group>
           <Card style={{ width: '18rem' }}>
@@ -142,9 +111,9 @@ function Wood(item) {
                 </Card.Body>
 
 
-          </Card>
+          </Card> */}
           
-          <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
+          {/* <Card className="mx-3" style={{ width: '100%', height: 'auto' }}>
             <Carousel>
               <Carousel.Item className="carousel-slide img">
                 <img  src={medium1} alt='wood' />
@@ -161,9 +130,9 @@ function Wood(item) {
               <Card.Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
-              <Card.Text>Price: $60</Card.Text>
+              <Card.Text>Price: $60</Card.Text> */}
               {/* <Card.Text>Quantity: 15</Card.Text> */}
-              <Card.Text>Size: Medium</Card.Text>
+              {/* <Card.Text>Size: Medium</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
@@ -185,9 +154,9 @@ function Wood(item) {
               <Card.Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
-              <Card.Text>Price: $70</Card.Text>
+              <Card.Text>Price: $70</Card.Text> */}
               {/* <Card.Text>Quantity: 20</Card.Text> */}
-               <Card.Text>Size: Large</Card.Text>
+               {/* <Card.Text>Size: Large</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
@@ -205,13 +174,13 @@ function Wood(item) {
               <Card.Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
-              <Card.Text>Price: $70</Card.Text>
+              <Card.Text>Price: $70</Card.Text> */}
               {/* <Card.Text>Quantity: 20</Card.Text> */}
-              <Card.Text>Size: Custom </Card.Text>
+              {/* <Card.Text>Size: Custom </Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
-        </Col> 
+        </Col>  */}
 
       </Container>
 

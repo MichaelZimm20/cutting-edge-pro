@@ -18,7 +18,7 @@ import Upload from "./pages/Upload";
 import Signup from "./pages/SignupPage";
 import Login from "./pages/Login";
 import { StoreProvider } from "./utils/GlobalState";
-import Wood from "./pages/Wood";
+import Wood from "./pages/Products";
 import Metal from "./pages/Metal";
 import Acrylic from "./pages/Acrylic";
 import Footer from "./components/Footer";
@@ -69,7 +69,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/signuppage" element={<Signup />} />
               <Route exact path="/login" element={<Login />} />
-              <Route exact path="/wood" element={<Wood />} />
+              <Route exact path="/products" element={<Wood />} />
               <Route exact path="/metal" element={<Metal />} />
               <Route exact path="/Acrylic" element={<Acrylic />} />
               <Route exact path="/Upload" element={<Upload />} />

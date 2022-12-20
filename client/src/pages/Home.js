@@ -110,7 +110,7 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
-                        <Card className=" text-center mx-3">
+                        {/* <Card className=" text-center mx-3">
                             <Card.Img variant="top" src={metalEngraving} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             <Card.Body>
                                 <Card.Title>Metal Art</Card.Title>
@@ -137,7 +137,7 @@ const Home = () => {
                                     <Button variant="primary" className="w-100">Shop Acrylic</Button>
                                 </Link>
                             </Card.Footer>
-                        </Card>
+                        </Card> */}
                     </CardGroup>
                     </Col>
                     

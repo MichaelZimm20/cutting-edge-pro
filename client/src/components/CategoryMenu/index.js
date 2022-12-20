@@ -109,7 +109,7 @@ function CategoryMenu() {
         ))}
 
         <NavDropdown.Divider />
-        <NavDropdown.Item href="/games">Games</NavDropdown.Item>
+        {/* <NavDropdown.Item href="/games">Games</NavDropdown.Item> */}
       </NavDropdown>
     </div>
   );

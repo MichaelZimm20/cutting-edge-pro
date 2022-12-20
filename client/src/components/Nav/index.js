@@ -21,7 +21,8 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/cart">Cart</Nav.Link>
-                  <CategoryMenu />
+                <Nav.Link href="/products">Products</Nav.Link>
+                  
                 <Nav.Link href="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -39,7 +40,8 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/cart">Cart</Nav.Link>
-                  <CategoryMenu />
+                <Nav.Link href="/products">Products</Nav.Link>
+                  
                 <Nav.Link href="/signuppage">Signup</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>
