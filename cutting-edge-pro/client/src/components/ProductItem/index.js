@@ -13,7 +13,6 @@ function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
   
   const {
-    image,
     _id,
     name,
     price,
@@ -52,22 +51,9 @@ function ProductItem(item) {
 
 
   return (
-    // <Figure>
-    //   <Figure.Caption>
-    //     <Figure.Title>{name}</Figure.Title>
-    //     <span>${price}</span>
-          // {description}
-    //   </Figure.Caption>
-    //   <button onClick={addToCart}>Add to cart</button>
-    // </Figure>
-
+   
+  <div className="card px-1 py-1 m-2">
     <Card.Body>
-      <Link to={`/products/${_id}`}>
-        <img
-          alt={name}
-          src={`/images/${image}`}
-        />
-        </Link>
       <Card.Title>{name}</Card.Title>
       <Card.Text>
         {description}
@@ -75,6 +61,7 @@ function ProductItem(item) {
       <Card.Text>Price: <span>${price}</span></Card.Text>
       <Button variant="primary" onClick={addToCart}>Add to Cart</Button>
     </Card.Body>
+    </div>
   );
 }
 

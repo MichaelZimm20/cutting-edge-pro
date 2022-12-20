@@ -20,9 +20,15 @@ import ProductList from "../components/ProductList";
 function Wood(item) {
   // console.log(products);
   
+  // use state for globalstate and dispatch to update the globalstate
+  const [state, dispatch] = useStoreContext();
+
+  // destructure the currentCategory from globalstate
+  const { cart, currentCategory } = state;
+  console.log(currentCategory);
+
   
-  
-  const smallProduct = products.find(product => product.name.name === 'Small');
+  const smallProduct = products.find(product => product.name === 'wood');
   // console.log(smallProduct); // {name: {name: 'Small'}, price: 29.99, quantity: 45}
   // console.log(smallProduct.name)
   // console.log(smallProduct.price)
@@ -34,8 +40,23 @@ function Wood(item) {
   // console.log(mediumProduct.price)
   // console.log(mediumProduct.quantity)
 
-  const [state, dispatch] = useStoreContext();
-  const { cart } = state;
+
+     // if products equal to current catergoy then display those specific products 
+    //  function filterProducts() {
+    //   if(!currentCategory) {
+    //     return state.products;
+    //   }
+  
+    //   return state.products.filter((product) => {
+    //     console.log('product', product);
+    //     return product.name === 'wood'
+      
+        
+    //   })
+    // }
+
+
+
 
   const addToCart = (item) => {
     // find the cart item with the matching id
@@ -69,6 +90,7 @@ function Wood(item) {
   return (
     <div className='d-flex  mt-3'>
      <Container>
+            <ProductList />
      <Row>
         <Col>
           <Card style={{ width: '18rem' }}>
@@ -83,7 +105,6 @@ function Wood(item) {
             <img className="d-block w-100" src={metalEngraving} alt='wood'/>         
             </Carousel.Item>
             </Carousel>
-            <ProductList />
           </Card>
         </Col>
         <Col>

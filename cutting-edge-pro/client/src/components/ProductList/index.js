@@ -19,13 +19,17 @@ function ProductList() {
 
     // destructure the currentCategory from globalstate
     const { currentCategory } = state;
+    console.log(currentCategory);
 
+    
     // destructure loading and data for products
-    const { loading, data } = useQuery(QUERY_ALL_PRODUCTS, 
-        
-    );
+    const { loading, data } = useQuery(QUERY_PRODUCTS , {
+      // variables: {category: currentCategory}
+    });
+    console.log('data', data);
 
     useEffect(() => {
+
         // if there's data to be stored 
         if (data) {
             //store it in the globalstate
@@ -56,20 +60,23 @@ function ProductList() {
           return state.products;
         }
     
-        return state.products.filter((product) => product.category._id === currentCategory)
+        return state.products.filter((product) => {
+          console.log('product', product);
+          return product.category._id === currentCategory
+        
+          
+        })
       }
 
       
       return (
         <div className="my-2">
-          <h2>Our Products:</h2>
           {state.products.length ? (
             <div className="flex-row">
               {filterProducts().map((product) => (
                 <ProductItem
                   key={product._id}
                   _id={product._id} 
-                  image={product.image}
                   name={product.name}
                   price={product.price}
                   description={product.description}              
