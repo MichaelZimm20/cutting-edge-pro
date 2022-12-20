@@ -61,7 +61,7 @@ function ProductList() {
         }
     
         return state.products.filter((product) => {
-          console.log('product', product);
+          // console.log('product', product);
           return product.category._id === currentCategory
         
           

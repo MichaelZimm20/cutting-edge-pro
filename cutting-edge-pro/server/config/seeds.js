@@ -36,7 +36,7 @@ db.once('open', async () => {
           {
             name: 'Medium Wood Piece' ,
             category: categories[0]._id,
-            image: 'medium-wood.webp',
+            image: ['medium-wood.webp', 'image2', 'image3'],
             description:
             'These are examples of medium items we can print your image on. The largest cut out in medium is 24" x 24"',
             price: 59.99,

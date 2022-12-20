@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
+import { Carousel } from "bootstrap/dist/js/bootstrap.bundle";
 
 
 function ProductItem(item) {
@@ -53,6 +54,9 @@ function ProductItem(item) {
   return (
    
   <div className="card px-1 py-1 m-2">
+    {/* <Carousel>
+      <Carousel.Item></Carousel.Item>
+    </Carousel> */}
     <Card.Body>
       <Card.Title>{name}</Card.Title>
       <Card.Text>
