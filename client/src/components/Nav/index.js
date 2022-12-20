@@ -7,9 +7,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Saw from '../../assets/images/circular_saw_blade.png'
 import '../../App.css'
+import { useLocation } from 'react-router-dom';
 
 function Navigation() {
-
+  
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -52,7 +53,10 @@ function Navigation() {
     }
 
   }
-
+  const location = useLocation();
+  if (location.pathname === '/') {
+    return null;
+  }
   return (
     <header className="flex-row px-1">
       <nav>

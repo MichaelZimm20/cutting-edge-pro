@@ -19,11 +19,9 @@ import Signup from "./pages/SignupPage";
 import Login from "./pages/Login";
 import { StoreProvider } from "./utils/GlobalState";
 import Products from "./pages/Products";
-
 import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import Checkout from "./pages/Checkout";
-
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -52,23 +50,15 @@ function App() {
           <StoreProvider>
             <Navigation />
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <div
-                    className="d-flex flex-column h-100"
-                    style={{ zIndex: 100 }}
-                  >
-                    <LandingPage />
-                  </div>
-                }
-                exact
-              />
+             
+                <Route exact path="/" element={<LandingPage/>} />
+              
 
               <Route path="/home" element={<Home />} />
               <Route path="/signuppage" element={<Signup />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/products" element={<Products />} />
+
               <Route exact path="/Upload" element={<Upload />} />
               <Route exact path="/Checkout" element={<Checkout />} />
             </Routes>

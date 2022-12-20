@@ -1,43 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
-import landingMetal from '../../assets/images/landingpage.jpg'
-import landingWood from '../../assets/images/landing-wood.png'
-import landingAcrylic from '../../assets/images/landing-vinyl.jpg'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Col, Button, Card } from "react-bootstrap";
 
-
+import landingMetal from "../../assets/images/landingpage.jpg";
 
 const LandingPage = () => {
   return (
-    <Container className="h-100 w-100">
-      <Row>
+    <div>
       <Col>
-          <Card style={{ width: '100%' }}>
-            <Carousel>
-              <Carousel.Item>
-            <img className="d-block w-100" src={landingMetal} alt='wood'/>           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={landingWood}alt='wood' />           
-            </Carousel.Item>
-            <Carousel.Item>
-            <img className="d-block w-100" src={landingAcrylic}alt='wood' />           
-            </Carousel.Item>
-            </Carousel>
-          </Card>
-        </Col>
-      </Row>
-      <Row>
-      <Col className="text-center">
-          <div className="d-flex justify-content-center align-items-center" style={{ position: 'absolute', top: '50%', left: '50%', zIndex: 1 }}>
-            <Link to="/home">
-              <Button variant="primary">Start Shopping</Button>
-            </Link>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+        <Card style={{ width: "100%" }}>
+          <h1
+            style={{
+              color: "#FF9933",
+              textShadow: "0 0 0 #000",
+              position: "absolute",
+              top: "30%",
+              left: "15%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              // opacity: 0.5,
+            }}
+          >
+            Cutting Edge Pro
+          </h1>
+          <img className="d-block w-100" src={landingMetal} alt="wood" />
+        </Card>
+      </Col>
+
+      <Col className="mx-auto text-center">
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ position: "absolute", top: "91%", left: "50%", zIndex: 1 }}
+        >
+          <Link to="/home">
+            <Button variant="primary">Start Shopping</Button>
+          </Link>
+        </div>
+      </Col>
+    </div>
   );
 };
 

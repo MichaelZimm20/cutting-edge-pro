@@ -1,8 +1,15 @@
 
 import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  
+  const location = useLocation();
+  if (location.pathname === '/') {
+    return null;
+  }
+
   return (
     <footer className="bg-light py-3 mt-5">
       <div className="container">
