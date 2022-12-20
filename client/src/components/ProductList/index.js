@@ -72,7 +72,7 @@ function ProductList() {
       return (
         <div className="my-2">
           {state.products.length ? (
-            <div className="flex-row">
+            <div className="flex-row" style={{opacity: 0.75}}>
               {filterProducts().map((product) => (
                 <ProductItem
                   key={product._id}
