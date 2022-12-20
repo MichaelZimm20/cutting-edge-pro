@@ -103,7 +103,7 @@ function Wood(item) {
             <ProductList />
      <Row>
         <Col>
-        <CardGroup>
+        <Card.Group>
           <Card style={{ width: '18rem' }}>
             <Carousel>
               <Carousel.Item className="carousel-slide img">
@@ -187,13 +187,13 @@ function Wood(item) {
               </Card.Text>
               <Card.Text>Price: $70</Card.Text>
               {/* <Card.Text>Quantity: 20</Card.Text> */}
-              <Card.Text>Size: Large</Card.Text>
+               <Card.Text>Size: Large</Card.Text>
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
 
 
-        </CardGroup>
+        </Card.Group>
         </Col>
       </Row>
 
@@ -211,7 +211,7 @@ function Wood(item) {
               <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
-        </Col>
+        </Col> 
 
       </Container>
 

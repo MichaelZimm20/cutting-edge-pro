@@ -16,7 +16,7 @@ function Navigation() {
         // Logged in Nav bar
         <Navbar bg="light" expand="lg">
           <Container>
-            <Navbar.Brand href="/">Cutting Edge<img src={Saw} style={{ width: '35px', height: '35px' }} className='App-logo' alt='saw app logo' /></Navbar.Brand>
+            <Navbar.Brand href="/home">Cutting Edge<img src={Saw} style={{ width: '35px', height: '35px' }} className='App-logo' alt='saw app logo' /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
@@ -34,7 +34,7 @@ function Navigation() {
         // Nav bar for new users/ users who are not logged in
         <Navbar bg="light" expand="lg">
           <Container>
-            <Navbar.Brand href="/">Cutting Edge <img src={Saw} style={{ width: '35px', height: '35px' }} className='App-logo' alt='saw app logo' /></Navbar.Brand>
+            <Navbar.Brand href="/home">Cutting Edge <img src={Saw} style={{ width: '35px', height: '35px' }} className='App-logo' alt='saw app logo' /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
