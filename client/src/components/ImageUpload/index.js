@@ -15,8 +15,9 @@ import { useStoreContext } from '../../utils/GlobalState';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const ImageUpload = () => {
-  const [state, dispatch] = useStoreContext();
+  const [state] = useStoreContext();
   const [imageSelected, setImageSelected] = useState('');
+
   // Declare a state variable to store the image link
   const [imageLink, setImageLink] = useState('');
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
@@ -46,16 +47,11 @@ const ImageUpload = () => {
     }
   }, [data]);
 
-  const navigate = useNavigate();
-
-  const navigateStripe = () => {
-    // 👇️ navigate to google for testing
-    navigate('/home');
-  };
-
+    console.log('dataStripe', data)
   // upon submission get items for checkout and push them to new array
   function submitCheckout() {
     const productIds = [];
+    console.log(productIds)
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
@@ -67,6 +63,14 @@ const ImageUpload = () => {
       variables: { products: productIds }
     })
   }
+
+  // const navigate = useNavigate();
+
+  // const navigateStripe = () => {
+  //   // 👇️ navigate to google for testing
+  //   navigate('/home');
+  // };
+
 
   return (
     <div className="App">

@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 
 import Auth from '../../utils/auth';
-import { useLazyQuery } from '@apollo/client';
 import { idbPromise } from "../../utils/helpers";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import { loadStripe } from '@stripe/stripe-js';
 import { Card, Button } from 'react-bootstrap';
 import './style.css';
 
@@ -18,23 +16,16 @@ import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import CartItem from '../CartItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import { QUERY_CHECKOUT } from '../../utils/queries';
 import { useNavigate } from 'react-router-dom';
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
-// import { loadStripe } from '@stripe/stripe-js';
-// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   const [state,dispatch] = useStoreContext();
   // console.log('state', state);
   
   
-  // useLazyQuery Hook
-
-// add link from checkout to upload
-  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT); 
+  
   const navigate = useNavigate();
   
   const navigateUpload = () => {
@@ -54,14 +45,6 @@ const Cart = () => {
     }, [state.cart.length, dispatch]);
 
     
-    // useEffect use to handle stripe checkout and redirect to stripe
-    useEffect(() => {
-      if (data) {
-        stripePromise.then((res) => {
-          res.redirectToCheckout({ sessionId: data.checkout.session });
-        });
-      }
-    }, [data]);
     
     // open cart when item is added
     function toggleCart() {
@@ -79,20 +62,7 @@ const Cart = () => {
 
     
 
-    // upon submission get items for checkout and push them to new array
-    function submitCheckout() {
-      const productIds = [];
-  
-      state.cart.forEach((item) => {
-        for (let i = 0; i < item.purchaseQuantity; i++) {
-          productIds.push(item._id);
-        }
-      })
-  
-      getCheckout({
-        variables: { products: productIds }
-      })
-    }
+    
     // if the cart is closed display the cart symbol
     if (!state.cartOpen) {
       return (
@@ -118,7 +88,7 @@ const Cart = () => {
               <strong>Total: ${calculateTotal()}</strong>
               {
                 Auth.loggedIn() ?(
-                  <Button className=" d-flex justify-content-between "onClick={() => {submitCheckout(); navigateUpload();}}>
+                  <Button className=" d-flex justify-content-between "onClick={() => { navigateUpload();}}>
                     Checkout
                   </Button>
                  ) :(
