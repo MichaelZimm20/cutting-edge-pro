@@ -1,7 +1,6 @@
 // import gql from apollo/client
 import { gql } from "@apollo/client";
 
-
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {
@@ -18,7 +17,6 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
-
 // show and get all products
 export const QUERY_ALL_PRODUCTS = gql`
   {
@@ -34,7 +32,6 @@ export const QUERY_ALL_PRODUCTS = gql`
   }
 `;
 
-
 export const QUERY_CATEGORIES = gql`
   {
     categories {
@@ -43,8 +40,6 @@ export const QUERY_CATEGORIES = gql`
     }
   }
 `;
-
-
 
 export const QUERY_USER = gql`
   query user($username: String!) {

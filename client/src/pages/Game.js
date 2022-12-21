@@ -117,23 +117,23 @@ const Game = () => {
         <div key={rowIndex} className="row">
           {rows.map((col, colIndex) => (
             <button
-            key={colIndex}
+              key={colIndex}
               className="cell"
               onClick={() => handleMove(rowIndex, colIndex)}
-              >
+            >
               {col}
             </button>
           ))}
         </div>
       ))}
-  {gameStatus !== "in progress" && (
-    <div>
-      <p className="message">{gameStatus}</p>
-      <button className="new-game-button" onClick={resetGame}>
-        New game
-      </button>
-    </div>
-  )}
+      {gameStatus !== "in progress" && (
+        <div>
+          <p className="message">{gameStatus}</p>
+          <button className="new-game-button" onClick={resetGame}>
+            New game
+          </button>
+        </div>
+      )}
     </div>
   );
 };

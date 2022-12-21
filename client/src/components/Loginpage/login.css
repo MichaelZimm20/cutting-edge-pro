@@ -1,0 +1,17 @@
+.login-image {
+  transform: translateX(1325%) rotate(0deg);
+}
+
+.login-image.move-left-to-right {
+    animation: move-left-to-right 2s;
+  }
+
+  @keyframes move-left-to-right {
+    from {
+      transform: translateX(-100%) ;
+    }
+    to {
+      transform: translateX(1325%) rotate(360deg);
+    }
+  }
+  

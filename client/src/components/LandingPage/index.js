@@ -6,7 +6,7 @@ import landingMetal from "../../assets/images/landingpage.jpg";
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className="carousel">
       <Col>
         <Card style={{ width: "100%" }}>
           <h1
@@ -18,24 +18,27 @@ const LandingPage = () => {
               left: "15%",
               transform: "translate(-50%, -50%)",
               zIndex: 1,
-              // opacity: 0.5,
             }}
           >
-            Cutting Edge Pro
+            Cutting Edge
+            <Col className="mx-auto text-center">
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{
+                  position: "absolute",
+                  top: "91%",
+                  left: "50%",
+                  zIndex: 1,
+                }}
+              >
+                <Link to="/home">
+                  <Button variant="primary">Start Shopping</Button>
+                </Link>
+              </div>
+            </Col>
           </h1>
           <img className="d-block w-100" src={landingMetal} alt="wood" />
         </Card>
-      </Col>
-
-      <Col className="mx-auto text-center">
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ position: "absolute", top: "91%", left: "50%", zIndex: 1 }}
-        >
-          <Link to="/home">
-            <Button variant="primary">Start Shopping</Button>
-          </Link>
-        </div>
       </Col>
     </div>
   );

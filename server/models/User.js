@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = require("mongoose");
 const bcrypt = require("bcrypt");
-const Order = require('./Order');
+const Order = require("./Order");
 
 const userSchema = new Schema({
   username: {
@@ -40,9 +40,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('orderCount').get(function() {
-    return this.orders.length;
-  });
+userSchema.virtual("orderCount").get(function () {
+  return this.orders.length;
+});
 
 const User = mongoose.model("User", userSchema);
 

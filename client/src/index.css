@@ -50,17 +50,14 @@ code {
   align-items: center;
 }
 
-
-
-/* @media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-} */
-
 @media (max-width: 900px) {
   .carousel {
     width:auto;
     height:auto;
   }
+}
+
+@font-face {
+  font-family: 'Cyber';
+  src: local('Cyber'), url(./fonts/Revamped-X3q1a.ttf) format('truetype');
 }

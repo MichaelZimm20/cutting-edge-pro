@@ -1,6 +1,6 @@
 // import schema snd mongoose
 const { Schema } = require("mongoose");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new Schema({
   name: {
@@ -17,14 +17,12 @@ const productSchema = new Schema({
   },
   category: {
     type: Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true
+    ref: "Category",
+    required: true,
   },
   image: {
     type: String,
-  }
-  
-
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);
