@@ -1,22 +1,25 @@
 
-### License: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT), (https://opensource.org/licenses/MIT)
-
 # Title: Cutting Edge
 
-## Deployed link
-https://cutting-edge-pro-max.herokuapp.com/
+
+### License: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT), (https://opensource.org/licenses/MIT)
+
+
+## Deployed link & GitHub Link
+Heroku Link: https://cutting-edge-pro-max.herokuapp.com/ </br>
+Github Link: https://github.com/MichaelZimm20/cutting-edge-pro
 
 ## Screenshots
 <br/><br/>
-![cutting-edge-pro](src/assets/images/projectpic.png)
+![cutting-edge-pro](client/src/assets/images/projectpic.png)
 <br/><br/>
-![cutting-edge-pro](src/assets/images/projectpic2.png)
+![cutting-edge-pro](client/src/assets/images/projectpic2.png)
 <br/><br/>
-![cutting-edge-pro](src/assets/images/projectpic3.png)
+![cutting-edge-pro](client/src/assets/images/projectpic3.png)
 <br/><br/>
-![cutting-edge-pro](src/assets/images/projectpic4.png)
+![cutting-edge-pro](client/src/assets/images/projectpic4.png)
 <br/><br/>
-![cutting-edge-pro](src/assets/images/projectpic5.png)
+![cutting-edge-pro](client/src/assets/images/projectpic5.png)
 
 ## Description:
 This app is an online store that takes your image and puts it on our materials. We offer multiple sizes between all three materials.  Once you have created an account and selected your products  you can then go to your cart, review it and checkout with stripe. Upon successful purchase you will be taken back to our homepage.
